@@ -32,10 +32,13 @@ echo "Transmitting...."
 /boot/dietpi/dietpi-software install 17 # Git
 /boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
 
-HOST=hostname
+HOST_VAR=hostname
 
 # -------- Create stacks folder for Dockge --------
 mkdir /opt/stacks 
+
+# -------- Create  folder for weblauncher --------
+mkdir /mnt/dietpi_userdata/busyboxhttpd
 
 mkdir browsershack-setup
 cd browsershack-setup
@@ -48,11 +51,10 @@ cd BrowserShack
 # -------- Copy docker-compose files for Dockge  --------
 cp -r ./dockge_stacks/* /opt/stacks
 # -------- Copy website lauincher files & set hostname --------
-mkdir /mnt/dietpi_userdata/busyboxhttpd
 cp -r ./web_launcher/* /mnt/dietpi_userdata/busyboxhttpd
 
 # --- set hostname ---
-sed -i '/s/AVAHI-HOST/$HOST/g' /mnt/dietpi_userdata/busyboxhttpd/index.html	
+sed -i "s/AVAHI-HOST/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html	
 
 # -------- Install Dockge --------
 # Create directories that store your stacks and stores Dockge's stack
