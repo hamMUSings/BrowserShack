@@ -10,7 +10,7 @@ echo "                        -... .-. --- .-- ... . .-. ... .... .- -.-. -.-"
 echo "                                                                       Alpha v0.5633305 10/25"
 echo ""
 
-cho "One the next two DietPi menu screens set your hostname, enable your audio, and select the audio card to use"
+echo "One the next two DietPi menu screens set your hostname, enable your audio, and select the audio card to use"
 read -p "Press enter to continue"
 echo ""
 
