@@ -32,7 +32,7 @@ echo "Transmitting...."
 /boot/dietpi/dietpi-software install 17 # Git
 /boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
 
-HOST_VAR=hostname
+HOST_VAR=$hostname
 
 # -------- Create stacks folder for Dockge --------
 mkdir /opt/stacks 
