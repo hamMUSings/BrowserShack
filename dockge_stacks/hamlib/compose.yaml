@@ -1,0 +1,29 @@
+services:
+
+  rigctld:
+    build:
+      context: .
+      args:
+        HAMLIB_PACKAGE_VERSION: '${HAMLIB_PACKAGE_VERSION:-4.5.4-1+b1}'
+    image: '${HAMLIB_IMAGE_NAME:-hamlib}'
+    user: '999'
+    read_only: true
+    environment:
+      MODEL: '1'
+    # devices:
+    #   - '/dev/ttyUSB0:/dev/ttyUSB0'
+    command: 'rigctld'
+
+  rotctld:
+    build:
+      context: .
+      args:
+        HAMLIB_PACKAGE_VERSION: '${HAMLIB_PACKAGE_VERSION:-4.5.4-1+b1}'
+    image: '${HAMLIB_IMAGE_NAME:-hamlib}'
+    user: '999'
+    read_only: true
+    environment:
+      MODEL: '1'
+    # devices:
+    #   - '/dev/ttyUSB1:/dev/ttyUSB1'
+    command: 'rotctld'

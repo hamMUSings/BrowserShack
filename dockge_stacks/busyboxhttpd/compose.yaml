@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  webserver:
+    image: lipanski/docker-static-website:latest
+    restart: always
+    ports:
+      - "80:3000"
+    volumes:
+      - /mnt/dietpi_userdata/busyboxhttpd:/home/static
+      - /mnt/dietpi_userdata/busyboxhttpd/httpd.conf:/home/static/httpd.conf:ro
+

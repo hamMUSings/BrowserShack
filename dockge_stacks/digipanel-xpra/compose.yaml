@@ -1,0 +1,8 @@
+services:
+  digiportal-xpra:
+    container_name: digipanel-xpra
+    image: hammusings/digipanel-xpra:latest
+    ports:
+      - 7300:8080
+    devices:
+      - /dev/snd:/dev/snd

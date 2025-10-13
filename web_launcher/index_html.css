@@ -1,0 +1,59 @@
+a { color:#5D5D9E; } 
+a:visited { color:#5D5D9E; } 
+a:active { color:#5C615E; } 
+a:hover { color:#B2B3B4; } 
+#menu_15070e93 a { text-decoration: none; }
+#menu_15070e93_pane { background-color: #FFFFFF; border: 1px solid #FFFFFF; padding-top: 10px; padding-bottom: 10px; box-shadow: 2px 2px 6px 0px rgba(8, 8, 8, 0.784314); }
+#menu_15070e93_hr { background-color: #FFFFFF; height: 1px; border: none; }
+#menu_15070e93_entry { padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; }
+#menu_15070e93_entry:hover { background-color: #323232; color: #FFFFFF !important; }
+#menu_15070e93_entry:hover span { color:#FFFFFF !important; }
+		.menu_15070e93_mainMenuEntry { text-align: center; }
+		.menu_15070e93_mainMenuEntry:hover {	background-color:#282828; }
+		.menu_15070e93_mainMenuEntry:hover span {	color:#FFFFFF !important; }
+		#menu_15070e93 .mobileEntry { display: none; } 
+		#menu_15070e93 .normalEntry { display: block; } 
+		@media only screen and (max-width:900px) { 
+			#menu_15070e93 .mobileEntry { display: block; } 
+			#menu_15070e93 .normalEntry { display: none; } 
+		}
+body { background-color:#FFFFFF; padding:0;  margin: 0; }
+.textstyle1 { text-align:center; }
+#container_a8bef60 { vertical-align: top; position:relative; display: inline-block; width:100%; min-height:150px; max-width:1200px; background:none;  }
+.textstyle2 { text-align:left; }
+#container_29ee7549 { vertical-align: top; border-radius: 15px; position:relative; display: inline-block; width:100%; min-height:63px; background-color:#FFFFFF;  }
+#container_29ee7549_padding { margin: 10px; display: block;  }
+#container_23dd7d16 { vertical-align: top; position:relative; display: inline-block; width:46%; min-height:60px; background:none;  }
+#container_23dd7d16_padding { margin: 10px; display: block;  }
+#img_c798b63 { vertical-align: bottom; position:relative; display: inline-block; width:10%; background:none; height:auto;  }
+#button_8272807 { vertical-align: bottom; border-radius: 9px; position:relative; display: inline-block; margin:0px 0px 0px 20px;height:40px; background:none;  }
+.vcenterstyle1 { display: table; width: 100%; height: 100%; }
+.vcenterstyle2 { display: table-cell; vertical-align: middle; }
+.textstyle3 { font-size:18pt; font-family:Segoe, 'Segoe UI', 'Helvetica Neue', sans-serif; color:#2E2E2E; font-weight:bold;  }
+#container_61f69dfd { vertical-align: top; position:relative; display: inline-block; width:54%; min-height:60px; background:none;  }
+#container_61f69dfd_padding { margin: 10px; display: block;  }
+.textstyle4 { text-align:right; }
+#menu_15070e93 { vertical-align: bottom; position:relative; display: inline-block; width:191px; height:38px; text-align:left; background:none;  }
+.menuholder1 { position: relative; overflow: hidden; width: 100%; height: 100%; }
+.menustyle1 { position:absolute; width:37px; height:38px; left:10px;  }
+.menuentry_text1 { position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin-top:auto; margin-bottom:auto; margin-left:auto; margin-right:auto; height:33px;  }
+.textstyle5 { font-size:22pt; font-family:Arial, Helvetica, sans-serif; color:#000000;  white-space: nowrap; }
+.menustyle2 { position:absolute; width:80px; height:38px; left:10px;  }
+.menuentry_text2 { position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin-top:auto; margin-bottom:auto; margin-left:auto; margin-right:auto; height:23px;  }
+.textstyle6 { font-size:12pt; font-family:Segoe, 'Segoe UI', 'Helvetica Neue', sans-serif; color:#656565; font-weight:bold;  white-space: nowrap; }
+.textstyle7 { font-size:10pt; font-family:Segoe, 'Segoe UI', 'Helvetica Neue', sans-serif; color:#A8A8A8; font-weight:bold;  white-space: nowrap; }
+.menustyle3 { position:absolute; width:67px; height:38px; left:90px;  }
+#container_7b56f8c2 { vertical-align: top; position:relative; display: inline-block; width:100%; min-height:406px; background-color:#FFFFFF; background-image: url(rc_images/duga_radar_array_near_chernobyl__ukraine_2014_2048x1365.jpg); background-position:center left; background-size:cover;  }
+#container_7b56f8c2_padding { margin: 10px; display: block;  }
+.textstyle8 { font-size:26pt; font-family:Arial, Helvetica, sans-serif; color:#FFFFFF; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.196078);  }
+.textstyle9 { font-size:26pt; font-family:'Arial Black', Gadget, sans-serif; color:#FFFFFF; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.196078);  }
+#text_6bdbc14d { position:absolute; left:78%; top:87%; width:223px; height:24px; background:none;  }
+.textstyle10 { font-size:8pt; font-family:Arial, Helvetica, sans-serif; color:#000000;  }
+@media only screen and (max-width: 900px)
+{
+		#menu_15070e93 { width:150px;  }
+}
+@media only screen and (max-width: 640px)
+{
+		#button_8272807 * span { font-size:12pt;  }
+}
