@@ -38,7 +38,7 @@ mkdir browsershack-setup
 cd browsershack-setup
 
 # -------- Clone Browsershack project files  --------
-git clone -b dev https://github.com/hamMUSings/BroswerShack.git
+git clone -b dev https://github.com/hamMUSings/BrowserShack.git
 cd BrowserShack
 # -------- Create stacks folder for Dockge --------
 mkdir /opt/stacks 
