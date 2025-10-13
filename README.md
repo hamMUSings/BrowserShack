@@ -1,4 +1,4 @@
-# BroswerShack
+# BrowserShack
 
 This is a a collection of contarized tools to make a browser based FT-8/Digital focused remote setup with a very lightweght web based launcher to tie them all together.
 
@@ -24,6 +24,8 @@ To Install:
 Install DietPi
 
 Run the following command to download the setup script, make it executible, and run it.  The script will take care of the rest of the basic setup.  
+
+https://github.com/hamMUSings/BroswerShack/blob/43bf27c700be6b85ef80eb6dc19a405705a7c5f1/install.sh
 
 If you need to change settings such as what serial port or video capture card to use you can do so in Dockge and change the docker-compose.yaml file settings where most of these exist.
  
