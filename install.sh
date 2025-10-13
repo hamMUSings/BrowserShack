@@ -34,14 +34,16 @@ echo "Transmitting...."
 
 HOST=hostname
 
+# -------- Create stacks folder for Dockge --------
+mkdir /opt/stacks 
+
 mkdir browsershack-setup
 cd browsershack-setup
 
 # -------- Clone Browsershack project files  --------
 git clone -b dev https://github.com/hamMUSings/BrowserShack.git
 cd BrowserShack
-# -------- Create stacks folder for Dockge --------
-mkdir /opt/stacks 
+
 
 # -------- Copy docker-compose files for Dockge  --------
 cp -r ./dockge_stacks/* /opt/stacks
