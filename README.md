@@ -117,7 +117,7 @@ For more information on the use and features of this panel visit the [github rep
 Wavelog is an open source logging software.  It is by default included as its own docker stack as provided by the Wavelog project.  For detailed directions see the [Wavelog github repository.](https://github.com/wavelog/wavelog)
 
 > [!WARNING]
-> Make sure to change the MariaDB login password in the docker-compose.yaml file before launching the first time.  Directions are in the Post Installation Configuration page.
+> Make sure to change the MariaDB login password in the docker-compose.yaml file before launching the first time.  Directions are in the [Post Installation Configuration](configuration.md) page.
 
 <ins>Open IP KVM</ins>
 
