@@ -96,6 +96,7 @@ The main page is intentionally very simple. There are 4 main areas of note:
 ### Menu
 
 ***<ins>Sub Panels</ins>***
+
 ![BrowserShack Sub Panels menu.](documantation_images/sub_panels.png)
 
 This is the main set of links for BrowserShack. Each 'sub panel' opens up in a new tab for ease of multiple windows at one time.
