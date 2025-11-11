@@ -29,7 +29,7 @@ All this and more! Well all this and if you want to add anything you can.
 # Documentation Menu
 
 1) [Overview & Design Notes](#overview-and-design-notes)
-2) [Installation](Installadion.md)
+2) [Installation](Installation.md)
 3) [Post Installation Configuration](Configuration.md)
 4) [Manual](#manual)
 5) [Daily Use Flow Example](#daily-usage-flow)
