@@ -117,9 +117,10 @@ For more information on the use and features of this panel visit the [github rep
 Wavelog is an open source logging software.  It is by default included as its own docker stack as provided by the Wavelog project.  For detailed directions see the [Wavelog github repository.](https://github.com/wavelog/wavelog)
 
 > [!WARNING]
-> Make sure to change the MariaDB login password in the docker-compose.yaml file before launching the first time.  Directions are in the [Post Installation Configuration](configuration.md) page.
+> Make sure to change the MariaDB login password in the docker-compose.yaml file before launching the first time.  Directions are in the Post Installation Configuration page.
 
 <ins>Open IP KVM</ins>
+
 This opens the KVM to interface with your radio via it's video out and mouse input in. For detailed directions on how to setup and configure the KVM see the [Post Installation Configuration](configuration.md) page.
 
 > [!NOTE]
@@ -133,7 +134,7 @@ This opens the KVM to interface with your radio via it's video out and mouse inp
 This is a custom interface to turn any web enabled device into a handmic for the radio while in phone mode of BrowserShack.
 
 
-### HF Conditions module
+### HF Conditions Module
 
 This is a custom visualization of data from hamqsl.com.  It refreshes every hour by default and will open a larger image when clicked. For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
 
