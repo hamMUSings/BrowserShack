@@ -184,7 +184,7 @@ Turning off the Hamlib RIGCTLD Server is the primary security method of this set
 > [!WARNING]
 > It is highly recommended to turn off the 'hamlib_server' container when not in active use. This reduces the change of anyone accidentally or maliciously keying the radio without your knowledge.
 
-> [!INFORMATION]
+> [!INFO]
 > The bundled hamlib-server container has the auto-start flag on hamlib set so if your radio supports being woken by hamlib when this container is started the radio will turn on
 
 After logging in Dockge you will see the container stacks listed on the left with 3 main statuses:
