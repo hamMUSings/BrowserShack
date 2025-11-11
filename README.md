@@ -95,6 +95,42 @@ The main page is intentionally very simple. There are 4 main areas of note:
 
 ### Menu
 
+***<ins>Sub Panels</ins>***
+![BrowserShack Sub Panels menu.](documantation_images/sub_panels.png)
+
+This is the main set of links for BrowserShack. Each 'sub panel' opens up in a new tab for ease of multiple windows at one time.
+
+<ins>DigiPanel - XPRA</ins>
+
+This is the main interface for digital radio.  It opens a webpage with WSJT-X and GridTracker2 automatically opened.  JS8Call is also installed but doesn't auto run.
+
+For more information on the use and features of this panel visit the [github repository for the docker container.](https://github.com/hamMUSings/digipanel-xpra)
+
+> [!IMPORTANT]
+> For the specific BrowserShack setup see the Post Installation Configuration](configuration.md) page.
+
+![BrowserShack Sub Panels menu.](documantation_images/digipanel-xpra.png)
+
+<ins>Wavelog</ins>
+
+Wavelog is an open source logging software.  It is by default included as its own docker stack as provided by the Wavelog project.  For detailed directions see the [Wavelog github repository.](https://github.com/wavelog/wavelog)
+
+> [!WARNING]
+> Make sure to change the MariaDB login password in the docker-compose.yaml file before launching the first time.  Directions are in the [Post Installation Configuration](configuration.md) page.
+
+<ins>Open IP KVM</ins>
+This opens the KVM to interface with your radio via it's video out and mouse input in. For detailed directions on how to setup and configure the KVM see the [Post Installation Configuration](configuration.md) page.
+
+> [!NOTE]
+> For this feature to work well you need a radio with video out and mouse in.  As well as a video capture card and CH9329 controller connected to your server.  
+
+> [!WARNING]
+> Some radios treat mouse in oddly.  The one I know of is the Yaseu FT-710. For this to work on the FT-710 you will also need an adapter as described [here](https://hammusings.wordpress.com/2025/01/04/yaesu-ft-710-mice-compatibility-issue-solution/) between the radio and the CH9329 cable. 
+
+<ins>Hand Mic</ins>
+
+This is a custom interface to turn any web enabled device into a handmic for the radio while in phone mode of BrowserShack.
+
 
 ### HF Conditions module
 
