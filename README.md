@@ -108,7 +108,7 @@ This is the main interface for digital radio.  It opens a webpage with WSJT-X an
 For more information on the use and features of this panel visit the [github repository for the docker container.](https://github.com/hamMUSings/digipanel-xpra)
 
 > [!IMPORTANT]
-> For the specific BrowserShack setup see the Post Installation Configuration](configuration.md) page.
+> For the specific BrowserShack setup see the [Post Installation Configuration](configuration.md) page.
 
 ![BrowserShack digipanel example.](documantation_images/digipanel-xpra.png)
 
