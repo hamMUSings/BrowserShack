@@ -199,7 +199,30 @@ To stop an active container click on the active container (green box) and in the
 
 In general all containers should be Active except hamlib-server when you don't want the radio on.  And either/or digipanel-xpra OR phone_voice_stack.  There may be other reasons to turn off each container but that is up the individual users to determine.
 
-For more detailed use of Dockge see the [Dockge github repository.](https://github.com/louislam/dockge) 
+For more detailed use of Dockge see the [Dockge github repository.](https://github.com/louislam/dockge)
+
+# Daily Usage Flow
+
+Once everything is configured and all containers are confirmed to start and run correctly here are some general tips for using BrowserShack regularly.
+
+## To Start
+
+1) Open BrowserShack web page
+2) Launch Dockge page
+3) Start the hamlib-server container
+   - Make sure the radio is already on if yours does not auto-start with hamlib connection
+4) Start either the A) digipanel-xpra container OR the B) phone_voice_stack depending on how you want to radio today
+5) Launch the A) DigiPanel - XPRA web page or B) hamdmic & Open IP KVM page again depending on how you want to radio today
+
+## While Radio-ing
+
+- Use Wavelog to log your contacts
+- Use Open IP KVM to either view your radios settings or to change anything you want
+
+## To Stop For the Day
+
+1) If your radio supports hamlib power off command open the handmic page to shut the radio down
+2) Launch Dockge and stop the hamlib-server Container
 
 
 
