@@ -172,6 +172,36 @@ To hide the audio player again click the same speaker icon.
 
 ![BrowserShack main screen with audio player.](documantation_images/main_screen_audioplayer.png)
 
+## Dockge Usage
+
+Dockge is a core part of the system. It allows easy monitoring of all the containers in BrowserShack.  It is also how you start and stop applicable subsystems notably:
+
+1) Hamlib RIGCTLD Server - hamlib-server container
+2) Toggle Digipanel and Phone subsystems
+
+Turning off the Hamlib RIGCTLD Server is the primary security method of this setup. 
+
+> [!WARNING]
+> It is highly recommended to turn off the 'hamlib_server' container when not in active use. This reduces the change of anyone accidentally or maliciously keying the radio without your knowledge.
+
+> [!INFORMATION]
+> The bundled hamlib-server container has the auto-start flag on hamlib set so if your radio supports being woken by hamlib when this container is started the radio will turn on
+
+After logging in Dockge you will see the container stacks listed on the left with 3 main statuses:
+
+1) Active - Container is running
+2) Exited - Container is stopped
+3) Inactive - Container is stopped and told to not start 
+
+To stop an active container click on the active container (green box) and in the bar click on "Stop" (maroon box). To start a container select the Exited container and click "Start"
+
+![Dockge example.](documantation_images/dockge_active_stop.png)
+
+In general all containers should be Active except hamlib-server when you don't want the radio on.  And either/or digipanel-xpra OR phone_voice_stack.  There may be other reasons to turn off each container but that is up the individual users to determine.
+
+For more detailed use of Dockge see the [Dockge github repository.](https://github.com/louislam/dockge) 
+
+
 
 
 
