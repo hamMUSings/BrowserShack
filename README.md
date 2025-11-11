@@ -5,10 +5,12 @@ This is a a collection of containerized tools to make a browser based FT-8/Digit
 It goes one step further and focuses on radios that have video output and keyboard/mouse input to control the radio via an simple IP KVM.  Such as a Yaesu FT-710. This eliminates complex web interface for controlling the radio and keeps it simple: use the radio like you were in front of it. Natively.
 
 > [!NOTE]
-> Designed and best used for digital modes 
+> Designed and best used for digital modes
 
 > [!NOTE]
 > Designed and best used for radios with video out and mouse input in -- eg Yaesu FT-710
+
+![BrowserShack main screen.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen.png)
 
 This package includes:
 
@@ -23,6 +25,16 @@ This package includes:
   * Audio output from the radio is included on the home page: Two Way Audio!
 
 All this and more! Well all this and if you want to add anything you can.
+
+# Documentation Menu
+
+1) [Overview & Design Notes](#overview-and-design-notes)
+2) [Installation](installadtion.md)
+3) [Post Installation Configuration](configuration.md)
+4) [Manual](#manual)
+5) [Developer / Contributor Notes](#devnotes.md)
+
+# Overview and Design Notes
 
 ## Primary Impetus for BrowserShack
 One of the biggest reasons for me to consolidate these features is to keep all the audio routing for FT-8, etc local to the server. There is no reason to bring the audio to another computer to process it and then route the outbound audio back.  It only adds additional overhead that isn't needed. A secondary reason is then all the audio routing virtual cables can stay in place and my main computer, tablet, or phone doesn't have to change audio settings each session of FT-8 or ham radio after watching a youtube video or even at the same time.
@@ -68,13 +80,39 @@ One of the biggest reasons for me to consolidate these features is to keep all t
   * Remote radio work from anywhere in the house not anywhere in the world
   * Allows radio to be mounted in a less viewed area and still easily used
 
-# Installation
- 
-# First Run Setup / Config
+# Manual
 
-# Developer Notes
+## Main Page 
 
-See this page for notes on forking, editing, and contributing.
+![BrowserShack main screen annotated.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_annotated.png)
+
+The main page is intentionally very simple. There are 4 main areas of note:
+
+1) Menu (Blue Box)
+2) HF Conditions Modules (Red Box)
+3) Enable Radio Audio Player (Green Box)
+4) Return to Main Menu logo (Maroon Box)
+
+### Menu
+
+
+### HF Conditions module
+
+This is a custom visualization of data from hamqsl.com.  It refreshes every hour by default and will open a larger image when clicked. For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
+
+![BrowserShack main screen annotated.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_hfconds.png)
+
+### Enabled Radio Audio Player
+
+When clicked the speaker icon will show the player for the audio player from the radio as shown below.  This audio stream is only active when you have enabled the voice feature of BrowserShack. 
+
+To hide the audio player again click the same speaker icon.
+
+![BrowserShack main screen with audio player.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_audioplayer.png)
+
+
+
+
 
 
 
