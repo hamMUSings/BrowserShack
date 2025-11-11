@@ -145,15 +145,22 @@ This is the docker-compose.yaml manager with all the pre-configured docker-compo
 
 And for more information on Dockge project in general visit the [Dockge github repository.](https://github.com/louislam/dockge)  
 
+<ins>Space Weather</ins>
+
+This is a more detailed custom visutalization of data from hamqsl.com. All metrics outside of HF Conditions as provided by hamqsl.com are included.  It refreshes every hour by default and is updated via a docker container in BrowserShack.  
+
+![BrowserShack spaceweather example image.](documantation_images/space_weather.png)
+
 **<ins>About</ins>**
 
 ![BrowserShack About menu.](documantation_images/about.png)
 
-This has a link that brings you directly to this github repository and a link to open a tab with all the credits for 3rd party applications and images used in BrowserShack.
+This has a link that brings you directly to this github repository and a link to open a tab with all the credits for 3rd party applications and images used in BrowserShack.For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
+
 
 ### HF Conditions Module
 
-This is a custom visualization of data from hamqsl.com.  It refreshes every hour by default and will open a larger image when clicked. For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
+This is a custom visualization of data from hamqsl.com.  It refreshes every hour by default and will open a larger image when clicked. For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly). The docker container to update this information is included on BrowserShack.
 
 ![BrowserShack main screen annotated.](documantation_images/main_screen_hfconds.png)
 
