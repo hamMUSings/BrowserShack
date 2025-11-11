@@ -147,7 +147,7 @@ And for more information on Dockge project in general visit the [Dockge github r
 
 <ins>Space Weather</ins>
 
-This is a more detailed custom visutalization of data from hamqsl.com. All metrics outside of HF Conditions as provided by hamqsl.com are included.  It refreshes every hour by default and is updated via a docker container in BrowserShack.  
+This is a more detailed custom visutalization of data from hamqsl.com. All metrics outside of HF Conditions as provided by hamqsl.com are included.  It refreshes every hour by default and is updated via a docker container in BrowserShack.  For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
 
 ![BrowserShack spaceweather example image.](documantation_images/space_weather.png)
 
@@ -155,7 +155,7 @@ This is a more detailed custom visutalization of data from hamqsl.com. All metri
 
 ![BrowserShack About menu.](documantation_images/about.png)
 
-This has a link that brings you directly to this github repository and a link to open a tab with all the credits for 3rd party applications and images used in BrowserShack.For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
+This has a link that brings you directly to this github repository and a link to open a tab with all the credits for 3rd party applications and images used in BrowserShack.
 
 
 ### HF Conditions Module
