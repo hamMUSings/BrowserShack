@@ -10,7 +10,7 @@ It goes one step further and focuses on radios that have video output and keyboa
 > [!NOTE]
 > Designed and best used for radios with video out and mouse input in -- eg Yaesu FT-710
 
-![BrowserShack main screen.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen.png)
+![BrowserShack main screen.](documantation_images/main_screen.png)
 
 This package includes:
 
@@ -84,7 +84,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
 
 ## Main Page 
 
-![BrowserShack main screen annotated.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_annotated.png)
+![BrowserShack main screen annotated.](documantation_images/main_screen_annotated.png)
 
 The main page is intentionally very simple. There are 4 main areas of note:
 
@@ -100,7 +100,7 @@ The main page is intentionally very simple. There are 4 main areas of note:
 
 This is a custom visualization of data from hamqsl.com.  It refreshes every hour by default and will open a larger image when clicked. For more detailed information visit my [github for the docker container.](https://github.com/hamMUSings/hfcondsgraph-plotly)
 
-![BrowserShack main screen annotated.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_hfconds.png)
+![BrowserShack main screen annotated.](documantation_images/main_screen_hfconds.png)
 
 ### Enabled Radio Audio Player
 
@@ -108,7 +108,7 @@ When clicked the speaker icon will show the player for the audio player from the
 
 To hide the audio player again click the same speaker icon.
 
-![BrowserShack main screen with audio player.](https://github.com/hamMUSings/BrowserShack/documantation_images/main_screen_audioplayer.png)
+![BrowserShack main screen with audio player.](documantation_images/main_screen_audioplayer.png)
 
 
 
