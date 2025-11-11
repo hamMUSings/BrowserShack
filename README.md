@@ -32,6 +32,7 @@ All this and more! Well all this and if you want to add anything you can.
 2) [Installation](installadtion.md)
 3) [Post Installation Configuration](configuration.md)
 4) [Manual](#manual)
+5) [Daily Use Flow Example](#daily-usage-flow)
 5) [Developer / Contributor Notes](#devnotes.md)
 
 # Overview and Design Notes
