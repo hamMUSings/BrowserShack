@@ -95,7 +95,7 @@ The main page is intentionally very simple. There are 4 main areas of note:
 
 ### Menu
 
-***<ins>Sub Panels</ins>***
+**<ins>Sub Panels</ins>**
 
 ![BrowserShack Sub Panels menu.](documantation_images/sub_panels.png)
 
