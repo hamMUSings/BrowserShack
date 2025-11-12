@@ -41,7 +41,7 @@ It has the following types of markup:
 1) Straight html+css
    - Including buttons
 2) RocketCake javascript modules
-   -
+   - A
 3) Custom javascript
    - Websocket sending events per button
    - Most javascript code of all pages
