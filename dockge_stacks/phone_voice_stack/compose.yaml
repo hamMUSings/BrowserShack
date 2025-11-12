@@ -1,0 +1,44 @@
+services:
+  ome:
+    restart: unless-stopped
+    image: airensoft/ovenmediaengine:latest
+    ports:
+      - 1935:1935
+      - 9999:9999/udp
+      - 9000:9000
+      - 9998:9998/udp
+      - 3333:3333
+      - 3478:3478
+      - 10000-10009:10000-10009/udp
+    volumes:
+      - ome-origin-conf:/opt/ovenmediaengine/bin/origin_conf
+      - ome-edge-conf:/opt/ovenmediaengine/bin/edge_conf
+    networks:
+      - browsershack-backend
+    depends_on: []
+  websocketd_to_hamlib:
+    restart: unless-stopped
+    image: hammusings/websocketd_to_hamlib:1.0
+    ports:
+      - 12020:2020
+    networks:
+      - browsershack-backend
+  gstreamer-whip_in-srt_out-ome:
+    restart: unless-stopped
+    image: hammusings/gstreamer-whip_in-srt_out-ome:1.0
+    environment:
+      - SERVER_NAME_IP=IP.ADD.RES.SS
+      - SOUNDCARD_SPEAKER=hw:3,0
+      - SOUNDCARD_MIC=hw:3,0
+      - STREAM_MIC=radio-speaker
+      - STREAM_SPEAKER=radio-mic
+    devices:
+      - /dev/snd:/dev/snd
+    networks:
+      - browsershack-backend
+volumes:
+  ome-origin-conf: null
+  ome-edge-conf: null
+networks:
+  browsershack-backend:
+    external: true

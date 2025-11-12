@@ -220,7 +220,7 @@ Once everything is configured and all containers are confirmed to start and run 
 - Use Wavelog to log your contacts
 - Use Open IP KVM to either view your radios settings or to change anything you want
 
-## To Stop For the Day
+## To Stop
 
 1) If your radio supports hamlib power off command open the handmic page to shut the radio down
 2) Launch Dockge and stop the hamlib-server Container

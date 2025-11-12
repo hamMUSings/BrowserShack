@@ -1,0 +1,12 @@
+services:
+  hfconds-plotly-hourly:
+    container_name: hfconds-plotly-hourly
+    image: hammusings/hfconds-plotly-hourly-generator:latest
+    restart: unless-stopped
+    volumes:
+      - /mnt/dietpi_userdata/busyboxhttpd/rc_images:/home/plotly/output
+    networks:
+      - browsershack-backend
+networks:
+  browsershack-backend:
+    external: true

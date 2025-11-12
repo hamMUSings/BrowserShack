@@ -6,3 +6,9 @@ services:
       - 7300:8080
     devices:
       - /dev/snd:/dev/snd
+    networks:
+      - browsershack-backend
+    restart: unless-stopped
+networks:
+  browsershack-backend:
+    external: true

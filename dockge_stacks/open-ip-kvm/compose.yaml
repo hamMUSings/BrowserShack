@@ -8,4 +8,9 @@ services:
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/video0:/dev/video0
-networks: {}
+    networks:
+      - browsershack-backend
+    restart: unless-stopped
+networks:
+  browsershack-backend:
+    external: true
