@@ -1,8 +1,12 @@
 # Developer / Contributor Notes
 
+Detailed notes on all parts of BrowserShack to get anyone started who wants to contribute.
+
 # BrowserShack Home Web Page
 
 All web pages were laid out with [RocketCake](https://www.ambiera.com/rocketcake/)
+
+## index.html
 
 Index.html contains 3 main types of markup:
 
@@ -63,7 +67,7 @@ The frequency set has a text input field and the javascript takes that input and
 > [!IMPORTANT]
 > The websocket server has a filter on it to only allow legal ham band frequencies to be sent to the radio.  If an incorrect frequency is sent the field will reset but the radio will not change.  There is **no feedback** on the web page that it was wrong.
 
-To keep things simple the page only sends websocket commands and does not do anything with received packets. As the radio is in full view whether they succecced, failed, or PTT active is viewable right there no return information was put into the web page.
+To keep things simple the page only sends websocket commands and does not do anything with received packets. As the radio is in full view whether they succeeded, failed, or PTT active is viewable right there no return information was put into the web page.
 
 ## Space Weather & Photo Credits
 
