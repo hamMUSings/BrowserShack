@@ -22,7 +22,7 @@ do
 done
 
 if [ $unistall == "false" ]; then
-	echo "One the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
+	echo "On the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
 	read -p "Press enter to continue"
 	echo ""
 
