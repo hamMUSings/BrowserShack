@@ -66,7 +66,7 @@ if [ $unistall == "false" ]; then
 
 	# -------- Copy docker-compose files for Dockge  --------
 	#cp -r ./dockge_stacks/* /opt/stacks
-	cp -r ./dockge_stacks/* /opt/stacks /mnt/dietpi_userdata/dockge/stacks
+	cp -r ./dockge_stacks/* /mnt/dietpi_userdata/dockge/stacks
 	# -------- Copy website lauincher files & set hostname --------
 	cp -r ./web_launcher/* /mnt/dietpi_userdata/busyboxhttpd
 
