@@ -76,7 +76,8 @@ In the Maroon Box edit the settings to match your radio.
 
 ![phone_voice_stack compose.yaml annotated](documantation_images/phone_voice_stack_edit.png)
 
-> [!TIP]  See the [section below on linux and soundcards](#linux-and-sound-cards) for information on how to  find your sound card id and more
+> [!TIP]  
+See the [section below on linux and soundcards](#linux-and-sound-cards) for information on how to  find your sound card id and more
 
 Once done hit Save in the action menu.
 
