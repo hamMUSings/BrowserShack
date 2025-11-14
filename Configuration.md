@@ -60,7 +60,7 @@ Once done hit Save in the action menu.
 In the Yellow Box edit the path to the serial port the CH9329 module is connected to. As well as the path to the video capture card that is attached.
 
 > [!TIP]
-> One way to find the video card path is to use ```v4l2-ctl --list-devices``` to use you may need to install v4l2-ctl ``` apt install v4l-utils```
+> One way to find the video card path is to use ```v4l2-ctl --list-devices``` to use you may need to install v4l2-ctl ```apt install v4l-utils```
 
 ![open-ip-kvm compose.yaml annotated](documantation_images/open-ip-kvm-edit.png)
 
