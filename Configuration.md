@@ -49,7 +49,7 @@ In the Maroon Box edit the settings to match your radio.
 In the Yellow Box edit the serial device path for your radio.  
 
 > [!TIP]  
-> One option to determine the radio's serial port is to run '''dmesg | grep tty'' in the command line of dietpi
+> One option to determine the radio's serial port is to run ```dmesg | grep tty``` in the command line of dietpi
 
 ![hamlib-server compose.yaml annotated](documantation_images/hamlib-server-edit.png)
 
