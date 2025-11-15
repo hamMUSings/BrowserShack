@@ -102,7 +102,7 @@ Once done hit Save in the action menu.
 
 Most of the setup for WSJT-x and GridTracker2 are not special to BrowserShack.  Refer to their specific websites for more information on general configuration / use.  
 
-* [WSJT-x](https://wsjt.sourceforge.io/wsjtx.html)
+* [WSJT-X](https://wsjt.sourceforge.io/wsjtx.html)
 * [GridTracker2](https://gridtracker.org/)
 
 Most of the specific settings are using the container names to connect the services
