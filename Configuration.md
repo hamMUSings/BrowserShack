@@ -93,15 +93,42 @@ Once done hit Save in the action menu.
 
 ## Start Containers
 
-
-
 > [!TIP]
 > Not all containers need to be started and/or used.  Users can choose which containers to use and even add new ones to their stack.  However, any deviation from the full use is not supported and considered an advanced use case.
 
+# Wavelog Setup Information
+
 # Digipanel Setup Information
 
+Most of the setup for WSJT-x and GridTracker2 are not special to BrowserShack.  Refer to their specific websites for more information on general configuration / use.  
 
+* [WSJT-x](https://wsjt.sourceforge.io/wsjtx.html)
+* [GridTracker2](https://gridtracker.org/)
 
+Most of the specific settings are using the container names to connect the services
+
+## WSJT-X
+
+### Radio Tab
+For the radio setting on WSTJ-X set:
+* Rig: Hamliib NET rigctl (Maroon Box)
+* Network Server: hamlib-server:4532 (Green Box)
+  * This is static container name within BrowserShack so the network traffic doesn't leave the Server
+  * Port is the internal port number of the hamlib-server container NOT the external port of 45320
+* PTT Method: CAT (Purple Box)
+* Transmit Audio Source, Mode, and Split Operation: Dependent Upon your radio (Yellow Box)
+
+Then hit Test CAT to see if the settings are working (Blue Box)
+
+![WSJT-X Radio settings annotated](documantation_images/wsjtx_settings.png)
+
+### Audio Tab
+
+Your audio sources have been mapped from the host computer.  So the exact settings will depend on your radio, sound card, and setup.  See [below](#linux-and-sound-cards) for some tips on IDing your card and devices.  This may take some testing each option before finding the one(s) that works.
+
+## GridTracker2
+
+GridTracker2 will automatically find WSJT-X running on the same machine so the only setup is if you want to log directly to Wavelog.  
 
 
 # Linux and Sound Cards
