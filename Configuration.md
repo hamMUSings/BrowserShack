@@ -98,6 +98,14 @@ Once done hit Save in the action menu.
 
 # Wavelog Setup Information
 
+When you launch Wavelog for the first time it will walk you through setting it up and creating a user.  The only specific settings for BrowserShack are:
+
+* Database Server: wavelog-db
+* Database Name: wavelog
+* Database Password: The password that was changed in the compose.yaml
+
+All other setup and use are covered on [Wavelog's github wiki](https://github.com/wavelog/wavelog/wiki/Dashboard)
+
 # Digipanel Setup Information
 
 Most of the setup for WSJT-x and GridTracker2 are not special to BrowserShack.  Refer to their specific websites for more information on general configuration / use.  
