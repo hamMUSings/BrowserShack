@@ -1,6 +1,20 @@
-# Post Installation Configuration
+# Post Installation Configuration Menu
 
-...Menu
+- [Edit and Start Docker Containers](#edit-and-start-docker-containers)
+  - [Quick Dockge Orientation](#quick-dockge-orientation)
+  - [Edit Necessary Containers](#edit-necessary-containers)
+    - [hamlib-server Settings](#hamlib-server)
+	- [open-ip-kvm Settings](#open-ip-kvm)
+	- [phone_voice_stack Settings](#phone_voice_stack)
+	- [wavelog Settings](#wavelog)
+  - [Start Stacks/Containers](#start-containers)
+- [Wavelog Setup information](#wavelog-setup-information)
+- [Digipanel Setup information](#digipanel-setup-information)
+  - [WSJT-x](#wsjt-x)
+    - [Radio Tab](#radio-tab)
+	- [Audio Tab](#audio-tab)
+  - [GridTracker2](#gridtracker2)
+- [Linux and Sound Cards](#linux-and-sound-cards)
 
 # Edit and Start Docker Containers
 
