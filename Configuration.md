@@ -30,10 +30,10 @@ More information on Dockge and it's detailed use can be found on the [Dockge git
 
 There are 3 containers that need to be edited before started.  In most cases it is to edit the specific hardware to use.
 
-1) hamlib-server
-2) open-ip-kvm
-3) phone_voice_stack
-4) wavelog
+- hamlib-server
+- open-ip-kvm
+- phone_voice_stack
+- wavelog
 
 > [!NOTE]
 > Make sure to keep the exact format of the compose.yaml file if you edit it directly. For example, do not add spaces around the equal sign in MODEL=VALUE.  Docker compose files will not work if the format is changed.
@@ -98,13 +98,13 @@ Once done hit Save in the action menu.
 
 Stacks to start for digital radio use:
 
-1) busyboxhttpd
-2) digipanel-xpra
-3) hf_conditions_hourly_plotly
-4) watchtower
-5) wavelog
-6) hamlib-server
-7) open-ip-kvm
+- busyboxhttpd
+- digipanel-xpra
+- hf_conditions_hourly_plotly
+- watchtower
+- wavelog
+- hamlib-server
+- open-ip-kvm
 
 If the stacks don't start successfully check the settings edited above. Particularly, serial port mappings.
 
