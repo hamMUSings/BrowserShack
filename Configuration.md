@@ -10,7 +10,7 @@
   - [Start Stacks/Containers](#start-containers)
 - [Wavelog Setup information](#wavelog-setup-information)
 - [Digipanel Setup information](#digipanel-setup-information)
-  - [WSJT-x](#wsjt-x)
+  - [WSJT-X](#wsjt-x)
     - [Radio Tab](#radio-tab)
 	- [Audio Tab](#audio-tab)
   - [GridTracker2](#gridtracker2)
