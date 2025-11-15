@@ -209,7 +209,7 @@ So to second line forces a sub order the cards by their PID and VID.  So in the 
 Which allows me to set the card for the gsteamer container with hw:3,0 and it will consistently work.
 
 > [!TIP]
-> To make this work use lsusb, lsusb -t, aplay -l, and aplay -L to determine your card's VID and PID
+> To make this work use ```lsusb```, ```lsusb -t```, ```aplay -l```, and ```aplay -L``` to determine your card's VID and PID
 
 > [!TIP]
 > This is an optional step but a highly recommended one if your sound card is in the radio itself.
