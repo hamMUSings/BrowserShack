@@ -96,6 +96,24 @@ Once done hit Save in the action menu.
 > [!TIP]
 > Not all containers need to be started and/or used.  Users can choose which containers to use and even add new ones to their stack.  However, any deviation from the full use is not supported and considered an advanced use case.
 
+Stacks to start for digital radio use:
+
+1) busyboxhttpd
+2) digipanel-xpra
+3) hf_conditions_hourly_plotly
+4) watchtower
+5) wavelog
+6) hamlib-server
+7) open-ip-kvm
+
+If the stacks don't start successfully check the settings edited above. Particularly, serial port mappings.
+
+Once they all have started access the main page at:
+
+http://hostname
+
+Access the other setup panels via the main page.
+
 # Wavelog Setup Information
 
 When you launch Wavelog for the first time it will walk you through setting it up and creating a user.  The only specific settings for BrowserShack are:
