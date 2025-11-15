@@ -1,8 +1,10 @@
 # Post Installation Configuration
 
-## Edit and Start Docker Containers
+...Menu
 
-### Quick Dockge Orientation
+# Edit and Start Docker Containers
+
+## Quick Dockge Orientation
 
 ![Dockge main menu annotated](documantation_images/dockge_main.png)
 
@@ -24,7 +26,7 @@ Once edited hit save to save the compose.yaml file and then start to start the s
 
 More information on Dockge and it's detailed use can be found on the [Dockge github page.](https://github.com/louislam/dockge)  This orientation is not meant to be a full tutorial but give enough of a start to be able to follow this configuration and use for BrowserShack.
 
-### Edit Necessary Containers
+## Edit Necessary Containers
 
 There are 3 containers that need to be edited before started.  In most cases it is to edit the specific hardware to use.
 
@@ -36,7 +38,7 @@ There are 3 containers that need to be edited before started.  In most cases it 
 > [!NOTE]
 > Make sure to keep the exact format of the compose.yaml file if you edit it directly. For example, do not add spaces around the equal sign in MODEL=VALUE.  Docker compose files will not work if the format is changed.
 
-<ins>**hamlib-server**</ins>
+### hamlib-server
 
 In the Maroon Box edit the settings to match your radio. 
 
@@ -55,7 +57,7 @@ In the Yellow Box edit the serial device path for your radio.
 
 Once done hit Save in the action menu.
 
-<ins>**open-ip-kvm**</ins>
+### open-ip-kvm
 
 In the Yellow Box edit the path to the serial port the CH9329 module is connected to. As well as the path to the video capture card that is attached.
 
@@ -66,7 +68,7 @@ In the Yellow Box edit the path to the serial port the CH9329 module is connecte
 
 Once done hit Save in the action menu.
 
-<ins>**phone_voice_stack**</ins>
+### phone_voice_stack
 
 In the Maroon Box edit the settings to match your radio. 
 
@@ -81,14 +83,22 @@ See the [section below on linux and soundcards](#linux-and-sound-cards) for info
 
 Once done hit Save in the action menu.
 
-### Start Containers
+### wavelog
+
+In the Maroon Box edit/create a secure password for mariadb.  This will be used when you configure wavelog via the web page later.
+
+![phone_voice_stack compose.yaml annotated](documantation_images/wavelog_edit.png)
+
+Once done hit Save in the action menu.
+
+## Start Containers
 
 
 
 > [!TIP]
 > Not all containers need to be started and/or used.  Users can choose which containers to use and even add new ones to their stack.  However, any deviation from the full use is not supported and considered an advanced use case.
 
-## Digipanel Setup Information
+# Digipanel Setup Information
 
 
 
