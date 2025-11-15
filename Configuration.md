@@ -128,7 +128,9 @@ Your audio sources have been mapped from the host computer.  So the exact settin
 
 ## GridTracker2
 
-GridTracker2 will automatically find WSJT-X running on the same machine so the only setup is if you want to log directly to Wavelog.  
+GridTracker2 will automatically find WSJT-X running on the same machine so the only setup is if you want to log directly to Wavelog. 
+
+![WSJT-X Radio settings annotated](documantation_images/gridtracker2_settings.png)
 
 
 # Linux and Sound Cards
