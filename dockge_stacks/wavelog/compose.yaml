@@ -24,13 +24,9 @@ services:
     ports:
       - 7373:80
     restart: unless-stopped
-    networks:
-      - browsershack-backend
 volumes:
   wavelog-dbdata: null
   wavelog-uploads: null
   wavelog-userdata: null
   wavelog-config: null
-networks:
-  browsershack-backend:
-    external: true
+networks: {}

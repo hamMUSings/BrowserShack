@@ -1,0 +1,24 @@
+services:
+  webserver:
+    image: lipanski/docker-static-website:latest
+    restart: unless-stopped
+    ports:
+      - 80:3000
+    volumes:
+      - /mnt/dietpi_userdata/busyboxhttpd:/home/static
+      - /mnt/dietpi_userdata/busyboxhttpd/httpd.conf:/home/static/httpd.conf:ro
+
+  hfconds-plotly-hourly:
+    container_name: hfconds-plotly-hourly
+    image: hammusings/hfconds-plotly-hourly-generator:latest
+    restart: unless-stopped
+    volumes:
+      - /mnt/dietpi_userdata/busyboxhttpd/rc_images:/home/plotly/output
+
+  websocketd_to_hamlib:
+    restart: unless-stopped
+    image: hammusings/websocketd_to_hamlib:1.0
+    ports:
+      - 12020:2020
+    depends_on: []
+networks: {}
