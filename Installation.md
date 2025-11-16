@@ -24,7 +24,7 @@ This install script walks you through a few dietpi setup screens, installs requi
 - OvenMediaEngine Server.xml configuration file
 
 Run the following command to download the setup script, make it executable, and run it.  The script will take care of the rest of the basic setup.  
-  - ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/dev/install.sh | sudo chmod +x | sudo bash```
+  - ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/dev/install.sh | sudo chmod +x install.sh | sudo bash install.sh```
 
 ## Open Dockge
   
