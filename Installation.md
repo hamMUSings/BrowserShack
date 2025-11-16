@@ -32,7 +32,7 @@ Run the following command to download the setup script, make it executable, and 
   
 Once this installation is done Dockge will be available at:
 
-http://hostname:5100
+http://hostname:5001
 
 Open it and set a secure password.  
 
