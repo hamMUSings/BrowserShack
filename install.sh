@@ -107,6 +107,4 @@ elif [ $uninstall == "true" ]; then
         echo "uninstall"
 fi
 
-# copy ome server.xml
- 
 
