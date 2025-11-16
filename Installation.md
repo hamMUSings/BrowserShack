@@ -12,7 +12,9 @@
   - https://dietpi.com/docs/install/#how-to-install-dietpi-native-pc
   - DietPi .iso Downloads: https://dietpi.com/#download
   - When prompted to install applications skip it
-    - DietPi will ask if you want to install an empty system.  Answer yes.
+    - ![dietpi software menu](documantation_images/dietpi_software1.png)
+  - DietPi will ask if you want to install an pure minimal system.  Answer ok.
+    - ![dietpi software menu warning](documantation_images/dietpi_software2.png)
 
 ## Base BroswerShack Install
 
