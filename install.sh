@@ -40,15 +40,15 @@ if [ $uninstall == "false" ]; then
 	echo ""
 	echo "Transmitting...."
 
+	HOST_VAR=(hostname)
+	read -p "Enter host hostname: " HOST_VAR
+
 	# -------- Install apps that are available via DietPi --------
 	/boot/dietpi/dietpi-software install 162 # Docker
 	/boot/dietpi/dietpi-software install 134 # Docker Compose
 	/boot/dietpi/dietpi-software install 17  # Git
 	/boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
 
-	HOST_VAR=(hostname)
-	read -p "Enter host hostname: " HOST_VAR
-	
 	# -------- Create docker backbone network --------
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
 	
@@ -99,6 +99,16 @@ if [ $uninstall == "false" ]; then
 	curl "https://dockge.kuma.pet/compose.yaml?port=5001&stacksPath=/mnt/dietpi_userdata/dockge/stacks" --output compose.yaml
 
 	# Start the server
+	docker compose up -d
+	
+	# Start stacks that do not need user edits
+	cd /mnt/dietpi_userdata/dockge/stacks/wavelog
+	docker compose up -d 
+	
+	cd /mnt/dietpi_userdata/dockge/stacks/browsershack_web_frontend
+	docker compose up -d
+	
+	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
 	docker compose up -d
 
 # ---------------------------------- Uninstall Script Switch ----------------------------------
