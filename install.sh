@@ -47,6 +47,7 @@ if [ $uninstall == "false" ]; then
 	/boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
 
 	HOST_VAR=(hostname)
+	read -p "Enter host hostname: " HOST_VAR
 	
 	# -------- Create docker backbone network --------
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
@@ -60,10 +61,11 @@ if [ $uninstall == "false" ]; then
 	# -------- Create folder for ome config docker volume --------
 	mkdir -p /mnt/dietpi_userdata/docker-data/volumes/voice_stack_ome-origin-conf/_data
 
+	# -------- Create folder for BrowserShack setup files --------	
 	mkdir /mnt/dietpi_userdata/browsershack-setup
 	cd /mnt/dietpi_userdata/browsershack-setup
 
-	# -------- Clone Browsershack project files  --------
+	# -------- Clone BrowserShack project files  --------
 	git clone -b dev https://github.com/hamMUSings/BrowserShack.git
 	cd BrowserShack
 
