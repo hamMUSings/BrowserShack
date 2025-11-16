@@ -54,8 +54,11 @@ if [ $uninstall == "false" ]; then
 	# -------- Create stacks folder for Dockge --------
 	mkdir -p /mnt/dietpi_userdata/dockge/stacks
 
-	# -------- Create  folder for weblauncher --------
+	# -------- Create folder for weblauncher --------
 	mkdir /mnt/dietpi_userdata/busyboxhttpd
+	
+	# -------- Create folder for ome config docker volume --------
+	mkdir -p /mnt/dietpi_userdata/docker-data/volumes/voice_stack_ome-origin-conf/_data
 
 	mkdir /mnt/dietpi_userdata/browsershack-setup
 	cd /mnt/dietpi_userdata/browsershack-setup
@@ -68,6 +71,7 @@ if [ $uninstall == "false" ]; then
 	# -------- Copy docker-compose files for Dockge  --------
 	#cp -r ./dockge_stacks/* /opt/stacks
 	cp -r ./dockge_stacks/* /mnt/dietpi_userdata/dockge/stacks
+
 	# -------- Copy website lauincher files & set hostname --------
 	cp -r ./web_launcher/* /mnt/dietpi_userdata/busyboxhttpd
 
@@ -75,6 +79,9 @@ if [ $uninstall == "false" ]; then
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
+
+	# -------- Copy Server.xml config files for ome  --------
+	cp -r ./ome-config/* /mnt/dietpi_userdata/docker-data/volumes/voice_stack_ome-origin-conf/_data
 	
 	# ------- set MariaDB password so unique for each installation --------
 	MARIADB_PW=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
@@ -98,6 +105,6 @@ elif [ $uninstall == "true" ]; then
         echo "uninstall"
 fi
 
-
+# copy ome server.xml
  
 
