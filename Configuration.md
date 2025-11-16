@@ -52,6 +52,9 @@ There are 3 stacks that need to be edited before started.  In most cases it is t
 > [!NOTE]
 > Make sure to keep the exact format of the compose.yaml file if you edit it directly. For example, do not add spaces around the equal sign in MODEL=VALUE.  Docker compose files will not work if the format is changed.
 
+> [!IMPORTANT]
+> For device lines replace the left side of the : with your host device.  Leave the right side device of the : as is.  (The left is the host device and the right is the device it is mapped to in the container)
+
 ### control_stack
 
 In the Maroon Box edit the settings to match your radio. 
