@@ -15,7 +15,7 @@ It goes one step further and focuses on radios that have video output and keyboa
 This package includes:
 
 * Custom Lightweight web-launcher for all the tools -- so you don't have to remember the port numbers for each docker container plus a little extra
-* Hamlib server container for all other control / logging apps to bind to -- other applications don't even have to be running on this machine
+* Hamlib server for all other control / logging apps to bind to -- other applications don't even have to be running on this machine
 * Dockge Web-Based Docker Manager -- to edit customs settings and monitor each tools docker container
 * Open IP KVM - Lightweight and no security updated ip kvm that now uses ustreamer and CH9329 UART module for mouse/keyboard control ([Option]( https://www.aliexpress.us/item/3256807460786666.html?spm=a2g0o.order_list.order_list_main.5.7fb91802YVei7O&gatewayAdapt=glo2usa))
 * Wavelog - Fully featured web-based logging application
@@ -177,28 +177,28 @@ To hide the audio player again click the same speaker icon.
 
 Dockge is a core part of the system. It allows easy monitoring of all the containers in BrowserShack.  It is also how you start and stop applicable subsystems notably:
 
-1) Hamlib RIGCTLD Server - hamlib-server container
+1) Hamlib RIGCTLD Server & IP KVM Server - control_stack stack
 2) Toggle Digipanel and Phone subsystems
 
-Turning off the Hamlib RIGCTLD Server is the primary security method of this setup. 
+Turning off the control_stack (hamlib server and ip-kvm) is the primary security method of this setup. 
 
 > [!WARNING]
-> It is highly recommended to turn off the 'hamlib_server' container when not in active use. This reduces the change of anyone accidentally or maliciously keying the radio without your knowledge.
+> It is highly recommended to turn off the 'control_stack' stack when not in active use. This reduces the change of anyone accidentally or maliciously keying the radio without your knowledge.
 
 > [!TIP]
-> The bundled hamlib-server container has the auto-start flag on hamlib set so if your radio supports being woken by hamlib when this container is started the radio will turn on
+> The bundled hamlib-server container has the option of auto-start/auto-stop flag on hamlib set so if your radio supports being woken by hamlib when this container is started the radio will turn on and turn off when stopped
 
 After logging in Dockge you will see the container stacks listed on the left with 3 main statuses:
 
-1) Active - Container is running
-2) Exited - Container is stopped
-3) Inactive - Container is stopped and told to not start 
+1) Active - Stack is running
+2) Exited - Stack is stopped
+3) Inactive - Stack is stopped and told to not start 
 
-To stop an active container click on the active container (green box) and in the bar click on "Stop" (maroon box). To start a container select the Exited container and click "Start"
+To stop an active stack click on the active stack (green box) and in the bar click on "Stop" (maroon box). To start a stack select the Exited stack and click "Start"
 
 ![Dockge example.](documantation_images/dockge_active_stop.png)
 
-In general all containers should be Active except hamlib-server when you don't want the radio on.  And either/or digipanel-xpra OR phone_voice_stack.  There may be other reasons to turn off each container but that is up the individual users to determine.
+In general all stacks should be Active except control_stack when you don't want the radio on.  And either/or digipanel-xpra OR voice_stack.  There may be other reasons to turn off each container but that is up the individual users to determine.
 
 For more detailed use of Dockge see the [Dockge github repository.](https://github.com/louislam/dockge)
 
@@ -210,10 +210,16 @@ Once everything is configured and all containers are confirmed to start and run 
 
 1) Open BrowserShack web page
 2) Launch Dockge page
-3) Start the hamlib-server container
+3) Start the control_stack stack
    - Make sure the radio is already on if yours does not auto-start with hamlib connection
-4) Start either the A) digipanel-xpra container OR the B) phone_voice_stack depending on how you want to radio today
-5) Launch the A) DigiPanel - XPRA web page or B) hamdmic & Open IP KVM page again depending on how you want to radio today
+4) Start either the 
+   - digipanel-xpra stack
+   - voice_stack 
+   - depending on how you want to radio today
+5) Launch either the 
+   - DigiPanel - XPRA web page
+   - Hamdmic page 
+   - Again depending on how you want to radio today
 
 ## While Radio-ing
 
@@ -222,8 +228,8 @@ Once everything is configured and all containers are confirmed to start and run 
 
 ## To Stop
 
-1) If your radio supports hamlib power off command open the handmic page to shut the radio down
-2) Launch Dockge and stop the hamlib-server Container
+1) Launch Dockge and stop the control_stack stack
+   - If auto_power_off is set to 1 and the radio supports the feature it will turn off with the stack
 
 
 

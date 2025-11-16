@@ -10,23 +10,18 @@ echo "                        -... .-. --- .-- ... . .-. ... .... .- -.-. -.-"
 echo "                                                                       Alpha v0.5633305 10/25"
 echo ""
 
-
-install="false"
 uninstall="false"
-config="false"
 
 # Logic for arguments sent to the script
-while getopts iuc flag
+while getopts u flag
 do
     case "${flag}" in
-        i) install="true";;
         u) uninstall="true";;
-        c) config="true";;
     esac
 done
 
 # ---------------------------------- Install Script Switch ----------------------------------
-if [ $install == "true" ]; then
+if [ $uninstall == "false" ]; then
  
 	echo "On the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
 	read -p "Press enter to continue"
@@ -82,8 +77,8 @@ if [ $install == "true" ]; then
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
 	
 	# ------- set MariaDB password so unique for each installation --------
-	# MARIADB_PW=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
-    # sed compose.yml wavelog
+	MARIADB_PW=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+    sed -i "s/CHANGEME!/$MARIADB_PW/g" /mnt/dietpi_userdata/dockge/stacks/wavelog/compose.yaml
 
 	# -------- Install Dockge --------
 	# Create directories that store your stacks and stores Dockge's stack
@@ -99,18 +94,12 @@ if [ $install == "true" ]; then
 	
 	# enable the config portion of the script
 	config="true"
-fi
 
 # ---------------------------------- Uninstall Script Switch ----------------------------------
-if [ $uninstall == "true" ]; then
+elif [ $uninstall == "true" ]; then
         #Uninstall goes here
         echo "uninstall"
 fi
-
-# ---------------------------------- Config Script Switch ----------------------------------
-
-# Only run if uninstall is also not selected
-if [[ $config == "true" && $uninstall == "false" ]]; 
 
         echo "config"
 			# -------- Enumerate serial port options in a very round about way for the menu items --------
@@ -137,6 +126,9 @@ if [[ $config == "true" && $uninstall == "false" ]];
 			break
 		 fi
 	done
+	
+	sed -i "s/\\/dev\\/HAMLIBSER/$hamlibser/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
+	
 	# next
 	echo ""
 	echo "Please select the serial port to use for IP-KVM / Mouse Control:"
@@ -152,6 +144,8 @@ if [[ $config == "true" && $uninstall == "false" ]];
 			break
 		 fi
 	done
+	sed -i "s/\\/dev\\/IPKVMSER/$ipkvmser/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
+
 	# next
 	echo ""
 	echo "Please select the USB video device to use for IP-KVM streaming:"
@@ -166,14 +160,7 @@ if [[ $config == "true" && $uninstall == "false" ]];
 			break
 		 fi
 	done
-fi
-
-if [[ $config == "false" && $uninstall == "false" && $install == "false" ]]; then
-	echo "Please run with a switch:
-	-i , install
-	-u , uninstall
-	-c , config (select serial ports and usb devices)"
-fi
+	sed -i "s/\\/dev\\/IPKVMVIDEO/$uvcdev/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
 
  
 

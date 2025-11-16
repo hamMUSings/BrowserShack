@@ -1,13 +1,14 @@
 # Post Installation Configuration Menu
 
-- [Edit and Start Docker Containers](#edit-and-start-docker-containers)
+- [Edit and Start Docker Stacks](#edit-and-start-docker-stacks)
   - [Quick Dockge Orientation](#quick-dockge-orientation)
-  - [Edit Necessary Containers](#edit-necessary-containers)
-    - [hamlib-server Settings](#hamlib-server)
-	- [open-ip-kvm Settings](#open-ip-kvm)
-	- [phone_voice_stack Settings](#phone_voice_stack)
+  - [Edit Necessary Stacks](#edit-necessary-stacks)
+    - [control_stack Settings](#control_stack)
+	- [voice_stack Settings](#voice_stack)
 	- [wavelog Settings](#wavelog)
   - [Start Stacks/Containers](#start-containers)
+    - [Digital Radio Stack Statuses](#digital-radio-stack-statuses)
+	- [Voice Radio Stack Statuses](#voice-radio-stack-statuses)
 - [Wavelog Setup information](#wavelog-setup-information)
 - [Digipanel Setup information](#digipanel-setup-information)
   - [WSJT-X](#wsjt-x)
@@ -16,7 +17,7 @@
   - [GridTracker2](#gridtracker2)
 - [Linux and Sound Cards](#linux-and-sound-cards)
 
-# Edit and Start Docker Containers
+# Edit and Start Docker Stacks
 
 ## Quick Dockge Orientation
 
@@ -26,7 +27,7 @@ There are 4 main sections to Dockge interface:
 1) Stack list & status (Green Box)
 2) Current stack action menu (Red Box)
 3) Current containers in the stack (Orange Box)
-4) Docker compose.yaml file for the currently selected container (Yellow Box)
+4) Docker compose.yaml file for the currently selected stack (Yellow Box)
 
 In the action menu you can select, start, stop, restart, and edit (more options available).  For now selecting edit the stack takes you to this window where you can select to edit each container with the button in the Green Box.
 
@@ -40,57 +41,54 @@ Once edited hit save to save the compose.yaml file and then start to start the s
 
 More information on Dockge and it's detailed use can be found on the [Dockge github page.](https://github.com/louislam/dockge)  This orientation is not meant to be a full tutorial but give enough of a start to be able to follow this configuration and use for BrowserShack.
 
-## Edit Necessary Containers
+## Edit Necessary Stacks
 
-There are 3 containers that need to be edited before started.  In most cases it is to edit the specific hardware to use.
+There are 3 stacks that need to be edited before started.  In most cases it is to edit the specific hardware to use.
 
-- hamlib-server
-- open-ip-kvm
-- phone_voice_stack
+- control_stack
+- voice_stack
 - wavelog
 
 > [!NOTE]
 > Make sure to keep the exact format of the compose.yaml file if you edit it directly. For example, do not add spaces around the equal sign in MODEL=VALUE.  Docker compose files will not work if the format is changed.
 
-### hamlib-server
+### control_stack
 
 In the Maroon Box edit the settings to match your radio. 
 
 * MODEL: hamlib model radio number
 * BAUD: baud rate to communicate with your radio
-* AUTO_POWER_ON: hamlib option to automatically power your raadio on when hamlib connects (not available on all radios see hamlib for details)
+* AUTO_POWER_ON: hamlib option to automatically power your radio on when hamlib connects (not available on all radios see hamlib for details)
+  * 0: no
+  * 1: yes
+* AUTO_POWER_OFF: hamlib option to automatically power your radio off when hamlib disconnects (not available on all radios see hamlib for details)
   * 0: no
   * 1: yes
   
 In the Yellow Box edit the serial device path for your radio.  
 
 > [!TIP]  
-> One option to determine the radio's serial port is to run ```dmesg | grep tty``` in the command line of dietpi
+> One option to determine the radio & CH9329 serial port is to run ```dmesg | grep tty``` in the command line of dietpi
 
-![hamlib-server compose.yaml annotated](documantation_images/hamlib-server-edit.png)
-
-Once done hit Save in the action menu.
-
-### open-ip-kvm
-
-In the Yellow Box edit the path to the serial port the CH9329 module is connected to. As well as the path to the video capture card that is attached.
+In the Green Box edit the path to the serial port the CH9329 module is connected to. As well as the path to the video capture card that is attached.
 
 > [!TIP]
 > One way to find the video card path is to use ```v4l2-ctl --list-devices``` to use you may need to install v4l2-ctl ```apt install v4l-utils```
 
-![open-ip-kvm compose.yaml annotated](documantation_images/open-ip-kvm-edit.png)
+![control_stack compose.yaml annotated](documantation_images/control_stack_edit.png)
 
 Once done hit Save in the action menu.
 
-### phone_voice_stack
+### voice_stack
 
-In the Maroon Box edit the settings to match your radio. 
+In the Maroon Boxes edit the settings to match your radio. 
 
+* OME_HOST_IP: hostname or ip of your BrowserShack server
 * SERVER_NAME_IP: hostname or ip of your BrowserShack server
 * SOUNdCARD_SPEAKER: hardware id of the speaker port on the radio audio connection (Speaker is from the point of view of the sound card -- so audio OUT but that is microphone IN to the radio)
 * SOUNDCARD_MIC: hardware id of the microphone port on the radio audio connection (Microphone is from the point of view of the sound card -- so audio IN but that is speaker OUT to the radio)
 
-![phone_voice_stack compose.yaml annotated](documantation_images/phone_voice_stack_edit.png)
+![voice_stack compose.yaml annotated](documantation_images/voice_stack_edit.png)
 
 > [!TIP]  
 See the [section below on linux and soundcards](#linux-and-sound-cards) for information on how to  find your sound card id and more
@@ -105,21 +103,30 @@ In the Maroon Box edit/create a secure password for mariadb.  This will be used 
 
 Once done hit Save in the action menu.
 
-## Start Containers
+## Start Stacks
 
-> [!TIP]
-> Not all containers need to be started and/or used.  Users can choose which containers to use and even add new ones to their stack.  However, any deviation from the full use is not supported and considered an advanced use case.
+Start the stacks marked Active below and stop the stacks that are marked Inactive below.
 
-Stacks to start for digital radio use:
+### Digital Radio Stack Statuses
 
-- busyboxhttpd
-- digipanel-xpra
-- hf_conditions_hourly_plotly
-- watchtower
-- wavelog
-- hamlib-server
-- open-ip-kvm
+- Active
+  - browsershack_web_frontend
+  - control_stack  
+  - wavelog
+  - digipanel-xpra
+- Inactive
+  - voice_stack
 
+### Voice Radio Stack Statuses
+
+- Active
+  - browsershack_web_frontend
+  - control_stack  
+  - wavelog
+  - voice_stack
+- Inactive
+  - digipanel-xpra
+  
 If the stacks don't start successfully check the settings edited above. Particularly, serial port mappings.
 
 Once they all have started access the main page at:
