@@ -88,7 +88,7 @@ In the Maroon Boxes edit the settings to match your radio.
 
 * OME_HOST_IP: hostname or ip of your BrowserShack server
 * SERVER_NAME_IP: hostname or ip of your BrowserShack server
-* SOUNdCARD_SPEAKER: hardware id of the speaker port on the radio audio connection (Speaker is from the point of view of the sound card -- so audio OUT but that is microphone IN to the radio)
+* SOUNDCARD_SPEAKER: hardware id of the speaker port on the radio audio connection (Speaker is from the point of view of the sound card -- so audio OUT but that is microphone IN to the radio)
 * SOUNDCARD_MIC: hardware id of the microphone port on the radio audio connection (Microphone is from the point of view of the sound card -- so audio IN but that is speaker OUT to the radio)
 
 ![voice_stack compose.yaml annotated](documantation_images/voice_stack_edit.png)
