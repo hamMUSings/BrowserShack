@@ -22,7 +22,8 @@ done
 
 # ---------------------------------- Install Script Switch ----------------------------------
 if [ $uninstall == "false" ]; then
- 
+
+	# ---------------------------------- Actual Install Start ----------------------------------- 
 	echo "On the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
 	read -p "Press enter to continue"
 	echo ""
@@ -51,7 +52,6 @@ if [ $uninstall == "false" ]; then
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
 	
 	# -------- Create stacks folder for Dockge --------
-	#mkdir /opt/stacks 
 	mkdir -p /mnt/dietpi_userdata/dockge/stacks
 
 	# -------- Create  folder for weblauncher --------
@@ -91,9 +91,6 @@ if [ $uninstall == "false" ]; then
 
 	# Start the server
 	docker compose up -d
-	
-	# enable the config portion of the script
-	config="true"
 
 # ---------------------------------- Uninstall Script Switch ----------------------------------
 elif [ $uninstall == "true" ]; then
@@ -101,66 +98,6 @@ elif [ $uninstall == "true" ]; then
         echo "uninstall"
 fi
 
-        echo "config"
-			# -------- Enumerate serial port options in a very round about way for the menu items --------
-	ls /dev/ttyU* /dev/ttyS* | grep tty > ttyoptions.txt                         # ls gets the devices, grep makes them into rows, write them to a text file (round about)
-	readarray -t options < ttyoptions.txt                                        # reads text file into an array for the menu choice
-	rm ttyoptions.txt
-
-	# -------- Enumerate USB Video options in a very round about way for the menu items --------
-	ls /dev/video* | grep video > uvcoptions.txt			                     # ls gets the devices, grep makes them into rows, write them to a text file (round about)
-	readarray -t uvcoptions < uvcoptions.txt                                     # reads text file into an array for the menu choice
-	rm uvcoptions.txt
-
-	# -------- User inputs to select serial & video ports to use in conf files --------
-	echo ""
-	echo "Please select the serial port to use for HAMLIB Radio Control:"
-	echo ""
-	PS3="Please enter your choice: "
-	select option in "${options[@]}"; do
-		 if [[ "$option" == "" ]];                                               # if the return value is empty ask again as a proper answer will return the path of the port
-		 then
-			echo "Invalid option"
-		 else
-			hamlibser=$option                                                    # sets the variable with the answer and exits the loop
-			break
-		 fi
-	done
-	
-	sed -i "s/\\/dev\\/HAMLIBSER/$hamlibser/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
-	
-	# next
-	echo ""
-	echo "Please select the serial port to use for IP-KVM / Mouse Control:"
-	echo ""
-	PS3="Please enter your choice: "
-	select option in "${options[@]}"; do
-		 if [[ "$option" == "" ]];
-		 then
-			echo "Invalid option"
-			is_always_execute=false;
-		 else
-			ipkvmser=$option
-			break
-		 fi
-	done
-	sed -i "s/\\/dev\\/IPKVMSER/$ipkvmser/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
-
-	# next
-	echo ""
-	echo "Please select the USB video device to use for IP-KVM streaming:"
-	echo ""
-	PS3="Please enter your choice: "
-	select option in "${uvcoptions[@]}"; do
-		 if [[ "$option" == "" ]];                                               
-		 then
-			echo "Invalid option"
-		 else
-			uvcdev=$option	                                                     
-			break
-		 fi
-	done
-	sed -i "s/\\/dev\\/IPKVMVIDEO/$uvcdev/g" /mnt/dietpi_userdata/dockge/stacks/control_stack/compose.yaml
 
  
 
