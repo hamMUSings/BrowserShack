@@ -6,7 +6,7 @@
     - [control_stack Settings](#control_stack)
 	- [voice_stack Settings](#voice_stack)
 	- [wavelog Settings](#wavelog)
-  - [Start Stacks/Containers](#start-containers)
+  - [Start Stacks/Containers](#start-stacks)
     - [Digital Radio Stack Statuses](#digital-radio-stack-statuses)
 	- [Voice Radio Stack Statuses](#voice-radio-stack-statuses)
 - [Wavelog Setup information](#wavelog-setup-information)
