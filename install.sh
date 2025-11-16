@@ -100,16 +100,7 @@ if [ $uninstall == "false" ]; then
 
 	# Start the server
 	docker compose up -d
-	
-	# Start stacks that do not need user edits
-	cd /mnt/dietpi_userdata/dockge/stacks/wavelog
-	docker compose up -d 
-	
-	cd /mnt/dietpi_userdata/dockge/stacks/browsershack_web_frontend
-	docker compose up -d
-	
-	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
-	docker compose up -d
+
 
 	echo "BrowserShack is installed.  Navigate to http://$HOSTVAR:5001 to continue setup..."
 # ---------------------------------- Uninstall Script Switch ----------------------------------
