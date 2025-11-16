@@ -10,18 +10,24 @@ echo "                        -... .-. --- .-- ... . .-. ... .... .- -.-. -.-"
 echo "                                                                       Alpha v0.5633305 10/25"
 echo ""
 
-unistall="false"
+
+install="false"
+uninstall="false"
+config="false"
 
 # Logic for arguments sent to the script
-while getopts u: flag
+while getopts iuc flag
 do
     case "${flag}" in
-        #u) uninstall=${OPTARG};;
-		u) uninstall="true";;
+        i) install="true";;
+        u) uninstall="true";;
+        c) config="true";;
     esac
 done
 
-if [ $unistall == "false" ]; then
+# ---------------------------------- Install Script Switch ----------------------------------
+if [ $install == "true" ]; then
+ 
 	echo "On the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
 	read -p "Press enter to continue"
 	echo ""
@@ -70,11 +76,14 @@ if [ $unistall == "false" ]; then
 	# -------- Copy website lauincher files & set hostname --------
 	cp -r ./web_launcher/* /mnt/dietpi_userdata/busyboxhttpd
 
-	# --- set hostname ---
+	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
 	
+	# ------- set MariaDB password so unique for each installation --------
+	# MARIADB_PW=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+    # sed compose.yml wavelog
 
 	# -------- Install Dockge --------
 	# Create directories that store your stacks and stores Dockge's stack
@@ -87,16 +96,84 @@ if [ $unistall == "false" ]; then
 
 	# Start the server
 	docker compose up -d
-
-elif [ "uninstall" == "true" ]; then
-	#Uninstall goes here
-
+	
+	# enable the config portion of the script
+	config="true"
 fi
-# TO DO
-# docker hamlib build first
-# radio on / off / ssupend
-# sed for links
-# Uninstall script
+
+# ---------------------------------- Uninstall Script Switch ----------------------------------
+if [ $uninstall == "true" ]; then
+        #Uninstall goes here
+        echo "uninstall"
+fi
+
+# ---------------------------------- Config Script Switch ----------------------------------
+
+# Only run if uninstall is also not selected
+if [[ $config == "true" && $uninstall == "false" ]]; 
+
+        echo "config"
+			# -------- Enumerate serial port options in a very round about way for the menu items --------
+	ls /dev/ttyU* /dev/ttyS* | grep tty > ttyoptions.txt                         # ls gets the devices, grep makes them into rows, write them to a text file (round about)
+	readarray -t options < ttyoptions.txt                                        # reads text file into an array for the menu choice
+	rm ttyoptions.txt
+
+	# -------- Enumerate USB Video options in a very round about way for the menu items --------
+	ls /dev/video* | grep video > uvcoptions.txt			                     # ls gets the devices, grep makes them into rows, write them to a text file (round about)
+	readarray -t uvcoptions < uvcoptions.txt                                     # reads text file into an array for the menu choice
+	rm uvcoptions.txt
+
+	# -------- User inputs to select serial & video ports to use in conf files --------
+	echo ""
+	echo "Please select the serial port to use for HAMLIB Radio Control:"
+	echo ""
+	PS3="Please enter your choice: "
+	select option in "${options[@]}"; do
+		 if [[ "$option" == "" ]];                                               # if the return value is empty ask again as a proper answer will return the path of the port
+		 then
+			echo "Invalid option"
+		 else
+			hamlibser=$option                                                    # sets the variable with the answer and exits the loop
+			break
+		 fi
+	done
+	# next
+	echo ""
+	echo "Please select the serial port to use for IP-KVM / Mouse Control:"
+	echo ""
+	PS3="Please enter your choice: "
+	select option in "${options[@]}"; do
+		 if [[ "$option" == "" ]];
+		 then
+			echo "Invalid option"
+			is_always_execute=false;
+		 else
+			ipkvmser=$option
+			break
+		 fi
+	done
+	# next
+	echo ""
+	echo "Please select the USB video device to use for IP-KVM streaming:"
+	echo ""
+	PS3="Please enter your choice: "
+	select option in "${uvcoptions[@]}"; do
+		 if [[ "$option" == "" ]];                                               
+		 then
+			echo "Invalid option"
+		 else
+			uvcdev=$option	                                                     
+			break
+		 fi
+	done
+fi
+
+if [[ $config == "false" && $uninstall == "false" && $install == "false" ]]; then
+	echo "Please run with a switch:
+	-i , install
+	-u , uninstall
+	-c , config (select serial ports and usb devices)"
+fi
 
  
 
