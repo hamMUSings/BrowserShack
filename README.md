@@ -10,6 +10,9 @@ It goes one step further and focuses on radios that have video output and keyboa
 > [!NOTE]
 > Designed and best used for radios with video out and mouse input in -- eg Yaesu FT-710
 
+> [!NOTE]
+> BrowserShack is a headless server solution that is meant to be accessed from other devices web browsers. There is NO desktop environment in BrowserShack to reduce hardware requirements.
+
 ![BrowserShack main screen.](documantation_images/main_screen.png)
 
 This package includes:
