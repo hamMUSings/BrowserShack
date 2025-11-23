@@ -16,7 +16,7 @@
     }).then(function (stream) {
 
       // Set your whip endpoint
-      ovenLivekit.startStreaming('http://HHOOSSTTPPLLAACCEEHHOOLLDDEEERR:3333/radio-mic/stream?direction=whip', {
+      ovenLivekit.startStreaming('http://IIPPPPLLAACCEEHHOOLLDDEEERR:3333/radio-mic/stream?direction=whip', {
         httpHeaders: {
           'Authorization': 'Bearer token'
         }
@@ -43,33 +43,33 @@
 
 		// Functions to send a message to the Hamlib WebSocket server
         function sendUSB() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a M -d USB');
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d USB');
         }
 		
         function sendLSB() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a M -d LSB');
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d LSB');
         }
 		
         function sendFM() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a M -d FM');
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d FM');
         }
 		
         function sendFreq() {
 		    // Get the frequency input element
 			const messageInput = freqInput.value;
-			const cmd = 'hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a F -d ' + messageInput;
+			const cmd = 'hamlib -s hamlib-server -p 4532 -a F -d ' + messageInput;
             socket.send(cmd);
 			freqInput.value = '';
         }	
         function sendPTT_ON() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a T -d 1');
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 1');
         }
 		
 		function sendPTT_OFF() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a T -d 0');
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 0');
         }
 		function send_pwrOFF() {
-            socket.send('hamlib -s HHOOSSTTPPLLAACCEEHHOOLLDDEEERR -p 4534 -a T -d 0');
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 0');
         }
 
 		

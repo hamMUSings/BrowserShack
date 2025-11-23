@@ -42,6 +42,9 @@ if [ $uninstall == "false" ]; then
 
 	HOST_VAR=(hostname)
 	read -p "Enter host hostname: " HOST_VAR
+	
+	# Get IP for OME input
+	HOST_IP=$(hostname -I | awk '{print $1}')
 
 	# -------- Install apps that are available via DietPi --------
 	/boot/dietpi/dietpi-software install 162 # Docker
@@ -79,7 +82,8 @@ if [ $uninstall == "false" ]; then
 
 	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
-	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
+	#sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
+	sed -i "s/IIPPPPLLAACCEEHHOOLLDDEEERR/$HOST_IP/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
 
 	# -------- Copy Server.xml config files for ome  --------
@@ -114,8 +118,65 @@ if [ $uninstall == "false" ]; then
 	echo "BrowserShack is installed.  Navigate to http://$HOSTVAR:5001 to continue setup..."
 # ---------------------------------- Uninstall Script Switch ----------------------------------
 elif [ $uninstall == "true" ]; then
-        #Uninstall goes here
-        echo "uninstall"
+		
+	# Stop all stacks and remove images, containers, and volumes from that stack
+
+	cd /mnt/dietpi_userdata/dockge/stacks/wavelog
+	docker compose down --rmi all -v --remove-orphans
+	
+	cd /mnt/dietpi_userdata/dockge/stacks/browsershack_web_frontend
+	docker compose down --rmi all -v --remove-orphans
+	
+	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
+	docker compose down --rmi all -v --remove-orphans
+
+	cd /mnt/dietpi_userdata/dockge/stacks/control_stack
+	docker compose down --rmi all -v --remove-orphans
+
+	cd /mnt/dietpi_userdata/dockge/stacks/voice_stack
+	docker compose down --rmi all -v --remove-orphans
+
+	cd /mnt/dietpi_userdata/dockge
+	docker compose down --rmi all -v --remove-orphans
+	
+	# Remove docker network  
+	docker network rm browsershack-backend
+	
+	# Remove Files as installed
+	rm -r /mnt/dietpi_userdata/dockge/stacks
+	rm -r /mnt/dietpi_userdata/busyboxhttpd
+	rm -r /mnt/dietpi_userdata/dockge
+	rm -r /mnt/dietpi_userdata/browsershack-setup
+	
+	# Uninstall dietpi-software installed
+	read -p "Uninstall git? (y/N)" REM_GIT
+	read -p "Uninstall avahi (y/N)? " REM_AVAHI
+	read -p "Uninstall docker and docker compose? (y/N)" REM_DOCKER
+	
+	# Check GIT Answer
+	if [ $REM_GIT == "y" ]; then
+		/boot/dietpi/dietpi-software uninstall 17  # Git
+	else
+		echo "Git: NOT REMOVED. Please remove via dietpi-software menu"
+	fi
+	
+	# Check Avahi Answer
+	if [ $REM_AVAHI == "y" ]; then
+		/boot/dietpi/dietpi-software uninstall 152 # Avahi-Daemon
+	else
+		echo "Git: NOT REMOVED. Please remove via dietpi-software menu"
+	fi
+	
+	# Check Docker and Docker Compose Answer
+	if [ $REM_DOCKER == "y" ]; then
+		/boot/dietpi/dietpi-software uninstall 162 # Docker
+		/boot/dietpi/dietpi-software uninstall 134 # Docker Compose
+	else
+		echo "Git: NOT REMOVED. Please remove via dietpi-software menu"
+	fi
+
+    # Uninstall goes here
+    echo "Uninstall Complete - You may now delete the install.sh file"
 fi
 
 
