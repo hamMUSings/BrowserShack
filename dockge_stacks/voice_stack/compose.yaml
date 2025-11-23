@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
     image: hammusings/gstreamer-whip_in-srt_out-ome:1.0
     environment:
-      - SERVER_NAME_IP=192.168.11.152
+      - SERVER_NAME_IP=HO.ST.IP.ADDRESS
       - SOUNDCARD_SPEAKER=hw:3,0
       - SOUNDCARD_MIC=hw:3,0
       - STREAM_MIC=radio-speaker

@@ -115,7 +115,7 @@ if [ $uninstall == "false" ]; then
 	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
 	docker compose up -d
 
-	echo "BrowserShack is installed.  Navigate to http://$HOSTVAR:5001 to continue setup..."
+	echo "BrowserShack is installed.  Navigate to http://$HOST_VAR:5001 to continue setup..."
 # ---------------------------------- Uninstall Script Switch ----------------------------------
 elif [ $uninstall == "true" ]; then
 		
