@@ -27,10 +27,6 @@ This install script walks you through a few dietpi setup screens, installs requi
 
 Run the following command to download the setup script, make it executable, and run it.  The script will take care of the rest of the basic setup.  
   ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/dev/install.sh && chmod +x install.sh && ./install.sh```
-  
-  ```sudo chmod +x install.sh```
-  
-  ```./install.sh```
 
 ## Open Dockge
   
