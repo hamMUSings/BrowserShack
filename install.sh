@@ -82,7 +82,7 @@ if [ $uninstall == "false" ]; then
 
 	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
-	#sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
+	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/IIPPPPLLAACCEEHHOOLLDDEEERR/$HOST_IP/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
 
