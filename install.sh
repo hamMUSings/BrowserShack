@@ -57,6 +57,9 @@ if [ $uninstall == "false" ]; then
 	
 	# -------- Create stacks folder for Dockge --------
 	mkdir -p /mnt/dietpi_userdata/dockge/stacks
+	
+	# -------- Create stacks folder for websocketd dns quick lookup --------
+	mkdir -p /mnt/dietpi_userdata/dockge/hamlib-server-dns
 
 	# -------- Create folder for weblauncher --------
 	mkdir /mnt/dietpi_userdata/busyboxhttpd

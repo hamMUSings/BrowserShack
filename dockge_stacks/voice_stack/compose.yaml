@@ -42,10 +42,23 @@ services:
       - ome
   websocketd_to_hamlib:
     restart: unless-stopped
-    image: hammusings/websocketd_to_hamlib:1.0
+    image: hammusings/websocketd_to_hamlib:1.1
     ports:
       - 12020:2020
-    depends_on: []
+    volumes:
+      - /mnt/dietpi_userdata/dockge/hamlib-server-dns:/opt/server-dns/output
+    depends_on:
+      - dns-lookup-textfile
+    networks:
+      - browsershack-backend
+  dns-lookup-textfile:
+    container_name: dns-lookup-textfile
+    image: hammusings/dns-lookup-textfile:1.0
+    environment:
+      - SERVER=hamlib-server
+    volumes:
+      - /mnt/dietpi_userdata/dockge/hamlib-server-dns:/opt/server-dns/output
+    restart: unless-stopped
     networks:
       - browsershack-backend
 volumes:
