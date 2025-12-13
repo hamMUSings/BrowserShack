@@ -63,6 +63,9 @@ if [ $uninstall == "false" ]; then
 
 	# -------- Create folder for weblauncher --------
 	mkdir /mnt/dietpi_userdata/busyboxhttpd
+
+	# -------- Create folder for wavelog-db --------	
+	mkdir -p /mnt/dietpi_userdata/wavelog-db
 	
 	# -------- Create folder for ome config docker volume --------
 	mkdir -p /mnt/dietpi_userdata/docker-data/volumes/voice_stack_ome-origin-conf/_data
@@ -150,6 +153,7 @@ elif [ $uninstall == "true" ]; then
 	rm -r /mnt/dietpi_userdata/busyboxhttpd
 	rm -r /mnt/dietpi_userdata/dockge
 	rm -r /mnt/dietpi_userdata/browsershack-setup
+	rm -r /mnt/dietpi_userdata/wavelog-db
 	
 	# Uninstall dietpi-software installed
 	read -p "Uninstall git? (y/N)" REM_GIT
