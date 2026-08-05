@@ -6,9 +6,14 @@ services:
       - 7300:8080
     devices:
       - /dev/snd:/dev/snd
+      - /dev/dri:/dev/dri
     networks:
       - browsershack-backend
     restart: unless-stopped
+    group_add:
+      - video
+      - render
+      - "991"
 networks:
   browsershack-backend:
     external: true
