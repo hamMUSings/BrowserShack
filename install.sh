@@ -52,6 +52,8 @@ if [ $uninstall == "false" ]; then
 	/boot/dietpi/dietpi-software install 134 # Docker Compose
 	/boot/dietpi/dietpi-software install 17  # Git
 	/boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
+	/boot/dietpi/dietpi-software install 173 # LXQt 
+	/boot/dietpi/dietpi-software install 29 # XRDP
 
 	# -------- Create docker backbone network --------
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
