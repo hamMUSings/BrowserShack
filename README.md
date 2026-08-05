@@ -29,6 +29,9 @@ This package includes:
 
 All this and more! Well all this and if you want to add anything you can.
 
+> [!IMPORTANT]
+> Voice server is EXPERIMENTAL. It worked on my dev box but NOT on my install box. I choose to publish it included anyway instead of putting the time into moving it soley to the dev channel.  If it works for you please let me know AND if you have a pull request to make it work please submit it.
+
 # Documentation Menu
 
 1) [Overview & Design Notes](#overview-and-design-notes)
