@@ -24,13 +24,14 @@ done
 if [ $uninstall == "false" ]; then
 
 	# ---------------------------------- Actual Install Start ----------------------------------- 
-	echo "On the next two DietPi menu screens set your hostname & enable your audio (you do not need to select an audio device)"
+	echo "On the next two DietPi menu screens set your hostname, enable your audio (you do not need to select an audio device), and select your graphic driver"
 	read -p "Press enter to continue"
 	echo ""
 
 	# -------- Set Hostname and Enable Audio via DietPi Menus --------
 	/boot/dietpi/dietpi-config 5
 	/boot/dietpi/dietpi-config 14
+	/boot/dietpi/dietpi-config 102
 
 	echo ""
 	echo ""
