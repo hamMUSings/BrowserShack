@@ -36,6 +36,8 @@ http://hostname:5001
 
 Open it and set a secure password.  
 
+## Reboot 
+
 Reboot the machine to activate the graphic drivers.
 
 Then move onto [Post Installation Configuration directions](Configuration.md).
