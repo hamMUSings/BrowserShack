@@ -1,0 +1,69 @@
+services:
+  ome:
+    restart: unless-stopped
+    image: airensoft/ovenmediaengine:latest
+    ports:
+      - 1935:1935
+      - 9999:9999/udp
+      - 9000:9000
+      - 9998:9998/udp
+      - 3333:3333
+      - 3478:3478
+      - 10000:10000/udp
+      - 10001:10001/udp
+      - 10002:10002/udp
+      - 10003:10003/udp
+      - 10004:10004/udp
+      - 10005:10005/udp
+      - 10006:10006/udp
+      - 10007:10007/udp
+      - 10008:10008/udp
+      - 10009:10009/udp
+    volumes:
+      - ome-origin-conf:/opt/ovenmediaengine/bin/origin_conf
+      - ome-edge-conf:/opt/ovenmediaengine/bin/edge_conf
+    networks:
+      - browsershack-backend
+    depends_on: []
+  gstreamer-whip_in-srt_out-ome:
+    restart: unless-stopped
+    image: hammusings/gstreamer-whip_in-srt_out-ome:1.0
+    environment:
+      - SERVER_NAME_IP=HO.ST.IP.ADDRESS
+      - SOUNDCARD_SPEAKER=hw:3,0
+      - SOUNDCARD_MIC=hw:3,0
+      - STREAM_MIC=radio-speaker
+      - STREAM_SPEAKER=radio-mic
+    devices:
+      - /dev/snd:/dev/snd
+    networks:
+      - browsershack-backend
+    depends_on:
+      - ome
+  websocketd_to_hamlib:
+    restart: unless-stopped
+    image: hammusings/websocketd_to_hamlib:1.1
+    ports:
+      - 12020:2020
+    volumes:
+      - /mnt/dietpi_userdata/dockge/hamlib-server-dns:/opt/server-dns/output
+    depends_on:
+      - dns-lookup-textfile
+    networks:
+      - browsershack-backend
+  dns-lookup-textfile:
+    container_name: dns-lookup-textfile
+    image: hammusings/dns-lookup-textfile:1.0
+    environment:
+      - SERVER=hamlib-server
+    volumes:
+      - /mnt/dietpi_userdata/dockge/hamlib-server-dns:/opt/server-dns/output
+    restart: unless-stopped
+    networks:
+      - browsershack-backend
+volumes:
+  ome-origin-conf: null
+  ome-edge-conf: null
+networks:
+  browsershack-backend:
+    external: true

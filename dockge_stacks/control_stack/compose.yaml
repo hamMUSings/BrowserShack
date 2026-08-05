@@ -1,0 +1,33 @@
+services:
+  hamlib-server:
+    container_name: hamlib-server
+    image: hammusings/hamlib-server:4.6.5
+    ports:
+      - 45320:4532
+    environment:
+      - MODEL=1049
+      - BAUD=38400
+      - AUTO_POWER_ON=1
+      - AUTO_POWER_OFF=1
+    devices:
+      - /dev/ttyUSB1:/dev/ttyUSB0
+    restart: unless-stopped
+    networks:
+      - browsershack-backend
+  open-ip-kvm:
+    container_name: open-ip-kvm
+    image: hammusings/open-ip-kvm:latest
+    ports:
+      - 8000:8000
+      - 8010:8010
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/video0:/dev/video0
+    networks:
+      - browsershack-backend
+    restart: unless-stopped
+    depends_on:
+      - hamlib-server
+networks:
+  browsershack-backend:
+    external: true

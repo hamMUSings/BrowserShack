@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="generator" content="RocketCake">
+	<title>BrowserShack - Handmic</title>
+	<link rel="stylesheet" type="text/css" href="handmic_html.css?h=87443794">
+</head>
+<body><script src="https://cdn.jsdelivr.net/npm/ovenlivekit@latest/dist/OvenLiveKit.min.js"></script>
+  <script>
+    let ovenLivekit = OvenLiveKit.create();
+    ovenLivekit.getUserMedia({
+      audio: true,
+      video: false
+    }).then(function (stream) {
+
+      // Set your whip endpoint
+      ovenLivekit.startStreaming('http://IIPPPPLLAACCEEHHOOLLDDEEERR:3333/radio-mic/stream?direction=whip', {
+        httpHeaders: {
+          'Authorization': 'Bearer token'
+        }
+      });
+    });
+
+  </script>
+   <script>
+        // Create a WebSocket instance and connect to the server
+        const socket = new WebSocket('ws://HHOOSSTTPPLLAACCEEHHOOLLDDEEERR:12020');
+
+        // Event listener for when the WebSocket connection is opened
+        socket.onopen = function (event) {
+            // Alert the user that they are connected to the WebSocket server
+            alert('You are Connected to Hamlib Server');
+        };
+
+        // Event listener for when the WebSocket connection is closed
+        socket.onclose = function (event) {
+            // Log a message when disconnected
+            //  from the WebSocket server
+            console.log('Disconnected from Hamlib server');
+        };
+
+		// Functions to send a message to the Hamlib WebSocket server
+        function sendUSB() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d USB');
+        }
+		
+        function sendLSB() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d LSB');
+        }
+		
+        function sendFM() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a M -d FM');
+        }
+		
+        function sendFreq() {
+		    // Get the frequency input element
+			const messageInput = freqInput.value;
+			const cmd = 'hamlib -s hamlib-server -p 4532 -a F -d ' + messageInput;
+            socket.send(cmd);
+			freqInput.value = '';
+        }	
+        function sendPTT_ON() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 1');
+        }
+		
+		function sendPTT_OFF() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 0');
+        }
+		function send_pwrOFF() {
+            socket.send('hamlib -s hamlib-server -p 4532 -a T -d 0');
+        }
+
+		
+    </script>
+<script>
+function changeColor(elementId, newColor) {
+  let targetElement = document.getElementById(elementId);
+  targetElement.style.backgroundColor = newColor;
+}
+</script>
+<span></span>
+<div class="textstyle1">
+<div id="container_7947ae27"><div id="container_7947ae27_padding" ><div class="textstyle1"><div id="container_26c48a49"><div id="container_26c48a49_padding" ><div class="textstyle1"><div id="container_40dbae98"><div id="container_40dbae98_padding" ><div class="textstyle1"><a href="index.html"><img src="rc_images/logo_inverted.png" width="2500" height="512" id="img_213f923d" alt="" title="" border="0" /></a></div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></div>  </div>
+<div class="textstyle2">
+<div id="container_3634b17a"><div id="container_3634b17a_padding" ><div class="textstyle2"><iframe name="Rig View" frameBorder="0" src="http://HHOOSSTTPPLLAACCEEHHOOLLDDEEERR:8010/stream" scrolling="auto" id="iframe_78d6203e"></iframe></div>
+<div style="clear:both"></div></div></div>  </div>
+<div class="textstyle1">
+<span class="textstyle3">N</span><div id="container_35965677"><div id="container_35965677_padding" ><div class="textstyle2"><div id="container_5ce8949f"><div id="container_5ce8949f_padding" ><div class="textstyle2">  <div id="ptt_button" onmousedown="sendMessage('-a t -d FM')" onmouseup="sendMessage('-a t -d FM')">
+    <div class="vcenterstyle1"><div class="vcenterstyle2">      <div class="textstyle2">
+        <span class="textstyle4">PTT</span>
+        </div>
+      </div></div>
+    </div>
+</div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></div><span class="textstyle3"><br/></span><div id="container_15e95683"><div id="container_15e95683_padding" ></div></div><div id="container_698f25ca"><div id="container_698f25ca_padding" ><div class="textstyle2">  <div id="button_66a77ee4" onclick="sendUSB()">
+    <div class="vcenterstyle1"><div class="vcenterstyle2">      <div class="textstyle2">
+        <span class="textstyle4">USB</span>
+        </div>
+      </div></div>
+    </div>
+  <div id="lsb_button" onclick="sendLSB()">
+    <div class="vcenterstyle1"><div class="vcenterstyle2">      <div class="textstyle2">
+        <span class="textstyle4">LSB</span>
+        </div>
+      </div></div>
+    </div>
+  <div id="button_1cdf9a99" onclick="sendMessage()">
+    <div class="vcenterstyle1"><div class="vcenterstyle2">      <div class="textstyle2">
+        <span class="textstyle4">FM</span>
+        </div>
+      </div></div>
+    </div>
+</div>
+<div style="clear:both"></div></div></div><div id="container_2256852"><div id="container_2256852_padding" ><div class="textstyle2"><form  action=""
+enctype="application/x-www-form-urlencoded"
+method="POST" id="form_349c0a61"><div id="form_349c0a61_padding" ><div class="textstyle2"><div id="container_73614d28"><div id="container_73614d28_padding" ><div class="textstyle2">  <span class="textstyle4">Frequency (MHz)</span>
+</div>
+</div></div></div>
+<div class="textstyle1"><div id="container_6e79728"><div id="container_6e79728_padding" ><div class="textstyle2"><input type="text" value="" title="" name="TextEdit1"  id="freqInput" >
+<span class="textstyle3"> </span><div id="button_5a940f7f" onclick="sendFreq()"><div class="vcenterstyle1"><div class="vcenterstyle2"><div class="textstyle2">  <span class="textstyle4">Go</span>
+</div>
+</div></div></div></div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></form><span class="textstyle5"><br/></span></div>
+<div class="textstyle1"><div id="container_7546577e"><div id="container_7546577e_padding" ><div class="textstyle1"><div id="container_4416cfc1"><div id="container_4416cfc1_padding" ><div class="textstyle2">  <div id="button_632d7c06" onclick="send_pwrOFF()">
+    <div class="vcenterstyle1"><div class="vcenterstyle2">      <div class="textstyle2">
+        <span class="textstyle4">Power Off</span>
+        </div>
+      </div></div>
+    </div>
+</div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></div></div>
+<div style="clear:both"></div></div></div>  </div>
+</body>
+</html>

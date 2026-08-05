@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="generator" content="RocketCake">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="audioplayer_html.css?h=13d6ae77">
+</head>
+<body><div id="player_id"></div>
+<!-- Load OvenPlayer via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
+
+    <script>
+
+        // Initialize OvenPlayer
+        const player = OvenPlayer.create('player_id', {
+image: './rc_images/socket.png',
+playbackRates: [1],
+disableSeekUI: 'true',           
+          //aspectRatio: '2:0.9',
+            sources: [
+                {
+                    label: 'label_for_webrtc',
+                    // Set the type to 'webrtc'
+                    type: 'webrtc',
+                    // Set the file to WebRTC Signaling URL with OvenMediaEngine 
+                    file: 'ws://HHOOSSTTPPLLAACCEEHHOOLLDDEEERR:3333/radio-speaker/stream'
+                }
+            ]
+        });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/ovenlivekit@latest/dist/OvenLiveKit.min.js"></script>
+<script>
+// Create instance
+const ovenLivekit = OvenLiveKit.create();
+
+const constraint = {
+  audio: true,
+  video: true
+};
+
+// Gets a device stream with a constraint that specifies the type of media to request.
+ovenLivekit.getUserMedia(constraints).then(function (stream) {
+
+    // Got device stream. Ready for streaming.
+     ovenLivekit.startStreaming('http://HHOOSSTTPPLLAACCEEHHOOLLDDEEERR:3333/app/stream?direction=whip');
+}).catch(function (error) {
+
+    // Failed to get device stream.
+    console.error("Error", error);
+});
+</script>>
+<div class="textstyle1">
+  <span class="textstyle2"><br/></span>
+  </div>
+</body>
+</html>
