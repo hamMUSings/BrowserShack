@@ -55,6 +55,7 @@ if [ $uninstall == "false" ]; then
 	/boot/dietpi/dietpi-software install 173 # LXQt 
 	/boot/dietpi/dietpi-software install 29 # XRDP
 
+
 	# -------- Create docker backbone network --------
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
 	
@@ -78,7 +79,7 @@ if [ $uninstall == "false" ]; then
 	cd /mnt/dietpi_userdata/browsershack-setup
 
 	# -------- Clone BrowserShack project files  --------
-	git clone -b dev https://github.com/hamMUSings/BrowserShack.git
+	git clone -b devrdp https://github.com/hamMUSings/BrowserShack.git
 	cd BrowserShack
 
 
