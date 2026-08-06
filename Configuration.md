@@ -15,6 +15,10 @@
     - [Radio Tab](#radio-tab)
 	- [Audio Tab](#audio-tab)
   - [GridTracker2](#gridtracker2)
+- [Apache Guacamole Configuration Edits](#apache_guacamole_configuration_edits)
+  - [Username & Password Changes](#change_username_or_password)
+  - [Connection IP Changes](#change_connection_ip)
+- [Application Upgrades](#upgrading_applications)
 - [Linux and Sound Cards](#linux-and-sound-cards)
 
 # Edit and Start Docker Stacks
