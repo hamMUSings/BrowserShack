@@ -127,9 +127,9 @@ Start the stacks marked Active below and stop the stacks that are marked Inactiv
   - guacamole
 - Inactive
   - voice_stack
-- Desktop Applications Open
+- Desktop Applications OPEN
   - WJST-X or JS8Call
-  - GridTracker2 optinal
+  - GridTracker2 optional
 
 ### Voice Radio Stack Statuses
 
