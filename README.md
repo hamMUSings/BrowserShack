@@ -74,6 +74,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
   * Can be 'ported' to ARM easily and the install script will still work
   * Allows use of built in utilities:
     * Alsa config
+    * Video driver install
 	* Hostname setting
 	* Backups
 	* User data migration to a different drive / folder
@@ -234,6 +235,30 @@ Once everything is configured and all containers are confirmed to start and run 
    - DigiPanel - RDP web page
    - Hamdmic page 
    - Again depending on how you want to radio today
+
+## Digipanel - RDP
+
+When the Digipanl - RDP is launched it will take you to an Apache Guacamole login page.   This is the first of two sets of crenditals you will need to login to your LXQt desktop.
+
+GUACAMOLE LOGIN SCREEN SHOT
+
+The defaukt username and password are as follows but are changable in a configuration file.  
+
+Username: shack
+Password: browser
+
+> [!NOTE]
+> As there is still your root password after this first login the security concerns of using a common username password are lessened.
+
+Once you have logged in Guacamole will initalized an RDP session to your BrowserShack computer automatically. It will then bring up the XRDP login screen.
+
+Here you will enter root as the user and the password you set for root when you installed DietPi.
+
+XRDP LOGIN SCREEN SHOT
+
+Then you will be greated with the LXQt desktop -- ready to radio! Just hit the Other catetory in the start menu and you are off to the races to setup and use the digital radio apps.
+
+DESKTOP WITH OTHER MENU OPEN SCREEN SHOT
 
 ## While Radio-ing
 
