@@ -209,7 +209,7 @@ When you want to upgrade to a new version it is very simple. We aren't upgrading
 > [!TIP]
 > You can keep the old versions by renaming them to something like "GridTracker2-Old.AppImage" -- They will run side by side though there could be settings conflicts
 
-> [!TIP]
+> [!IMPORTANT]
 > The Menu items point to the specific short names below so any renamed AppImages will not launch through the Menu nor show up.  You can either add a new menu item, manually launch via file manager, or move them to another location
 
 > [!TIP]
