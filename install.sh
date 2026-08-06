@@ -211,7 +211,7 @@ elif [ $uninstall == "true" ]; then
 	fi
 
 	# Check LXQt Answer
-	if [ $REM_LXQt == "y" ]; then
+	if [ $REM_LXQT == "y" ]; then
 		/boot/dietpi/dietpi-software uninstall 173  # LXQt
 	else
 		echo "LXQt: NOT REMOVED. Please remove via dietpi-software menu"
