@@ -165,7 +165,7 @@ This menu items holds more utilitarian links.
 
 <ins>Dockge Manager</ins>
 
-This is the docker-compose.yaml manager with all the pre-configured docker-compose.yaml files for BrowserShack included. This will be where you go to start and stop services including hamlibd server and toggling the digipanel and phone stack as needed.  It is also where the configuration for your system is done.  For configuration options see [Post Installation Configuration](configuration.md) page.
+This is the docker-compose.yaml manager with all the pre-configured docker-compose.yaml files for BrowserShack included. This will be where you go to start and stop services including hamlibd server and toggling the digipanel and phone stack as needed.  It is also where the configuration for your system is done.  For configuration options see [Post Installation Configuration](Configuration.md) page.
 
 And for more information on Dockge project in general visit the [Dockge github repository.](https://github.com/louislam/dockge)  
 
