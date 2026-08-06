@@ -15,10 +15,10 @@
     - [Radio Tab](#radio-tab)
 	- [Audio Tab](#audio-tab)
   - [GridTracker2](#gridtracker2)
-- [Apache Guacamole Configuration Edits](#apache_guacamole_configuration_edits)
-  - [Username & Password Changes](#change_username_or_password)
-  - [Connection IP Changes](#change_connection_ip)
-- [Application Upgrades](#upgrading_applications)
+- [Apache Guacamole Configuration Edits](#apache-guacamole-configuration-edits)
+  - [Username & Password Changes](#change-username-or-password)
+  - [Connection IP Changes](#change-connection-ip)
+- [Application Upgrades](#upgrading-applications)
 - [Linux and Sound Cards](#linux-and-sound-cards)
 
 # Edit and Start Docker Stacks
@@ -201,6 +201,8 @@ GridTracker2 will automatically find WSJT-X running on the same machine so the o
 # Apache Guacamole Configuration Edits
   ## Change Username Or Password
   ## Change Connection IP
+
+# Upgrading Applications
 
 # Linux and Sound Cards
 Often the most tricky part of linux.  
