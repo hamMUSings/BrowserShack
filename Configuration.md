@@ -215,11 +215,11 @@ When you want to upgrade to a new version it is very simple. We aren't upgrading
 > [!TIP]
 > It is recommend to backup the current AppImage to another location until you are sure the new one works.
 
-1) Download the new AppImage file from GridTracker2, WSJT-X, or JS8Call websites within the DigiPanel desktop.
+## 1) Download the new AppImage file from GridTracker2, WSJT-X, or JS8Call websites within the DigiPanel desktop.
 
 ![GridTracker2 full name download example](documantation_images/app_upgrade_fullname.png)
 
-2) Right click and rename to one of the following short names:
+## 2) Right click and rename to one of the following short names:
 
 * GridTracker2.AppImage
 * wsjtx.AppImage
@@ -227,7 +227,7 @@ When you want to upgrade to a new version it is very simple. We aren't upgrading
 
 ![GridTracker2 shortened name example](documantation_images/app_upgrade_shortname.png)
 
-3) Set the new AppImage to be executable
+## 3) Set the new AppImage to be executable
 
 Right click and select properties on the new AppImage (Pink Box)
 
@@ -237,11 +237,11 @@ Select the Permissions Tab (Brown Box) and then check the "Make File Executable"
 
 ![Menu to set file as executable](documantation_images/app_upgrade_executable.png)
 
-4) Replace the current AppImage file in the /mnt/dietpi_userdata/AppImages folder (Green -> Teal -> Yellow Boxes)
+## 4) Replace the current AppImage file in the /mnt/dietpi_userdata/AppImages folder (Green -> Teal -> Yellow Boxes)
 
 ![Menu to set file as executable](documantation_images/app_upgrade_pastepath.png)
 
-5) ENJOY!
+## 5) ENJOY!
 
 That is it. Now when you launch the menu item it should open up the newest version of which ever app you just 'installed'
 
