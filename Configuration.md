@@ -196,11 +196,29 @@ Your audio sources have been mapped from the host computer.  So the exact settin
 
 GridTracker2 will automatically find WSJT-X running on the same machine so the only setup is if you want to log directly to Wavelog. 
 
-![WSJT-X Radio settings annotated](documantation_images/gridtracker2_settings.png)
+![GridTracker2 settings annotated](documantation_images/gridtracker2_settings.png)
 
 # Apache Guacamole Configuration Edits
-  ## Change Username Or Password
-  ## Change Connection IP
+
+Edit the configuration file located at:
+```
+/mnt/dietpi_userdata/dockge/stacks/guacamole/guac_home/user-mapping.xml
+```
+Either using ```nano /mnt/dietpi_userdata/dockge/stacks/guacamole/guac_home/user-mapping.xml```
+
+Or opening via the file manager (Violet Box) and right click -> Open with -> FeatherPad on the ```user-mapping.xml``` file (Peach Box) :
+
+![Apache Guacamole config file location](documantation_images/apache_fm_configfile.png)
+
+![Guacamole Config File Contents](documantation_images/apache_fm_configfile_edit.png)
+
+## Change Username Or Password
+
+Edit the plaintext username and password field in the user-mapping.xml file (Grey Box)
+
+## Change Connection IP
+
+Edit the hostmane field in the user-mapping.xml file (Light Brown Box)
 
 # Upgrading Applications
 
