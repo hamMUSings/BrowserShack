@@ -125,7 +125,7 @@ This is the main set of links for BrowserShack. Each 'sub panel' opens up in a n
 
 This is the main interface for digital radio.  It opens an Apache Guacamole login page with once logged in turn opens up an RDP session to the BrowserShack's LXQt desktop.  Here users can run WSJT-X, GridTracker2, and JS8Call via the "Other" category in the start menu.  
 
-As the desktop runs on the bare metal sound and graphic devices wowrk muuch more smoothly.  
+As the desktop runs on the bare metal sound and graphic devices wowrk much more smoothly.  
 
 Applications are easy to upgrade by simply downloading new AppImages, naming them correctly, and placing them in the correct folder.  No dependency issues, incomatibilities, or conflicts to worry about.
 
