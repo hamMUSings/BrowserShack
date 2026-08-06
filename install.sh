@@ -97,7 +97,7 @@ if [ $uninstall == "false" ]; then
 	cp ./digipanel-install/AppImages/wsjtx-3.0.2-linux-x86_64.AppImage /mnt/dietpi_userdata/AppImages/wsjtx.AppImage 
 	cp ./digipanel-install/AppImages/JS8Call-v3.0.3-x86_64.AppImage /mnt/dietpi_userdata/AppImages/JS8Call.AppImage
 	chmod +x /mnt/dietpi_userdata/AppImages/*
-	cp -r .digipanel-install/menu/* ~/.local/share/applications
+	cp -r ./digipanel-install/menu/* ~/.local/share/applications
 
 	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
