@@ -198,6 +198,9 @@ GridTracker2 will automatically find WSJT-X running on the same machine so the o
 
 ![WSJT-X Radio settings annotated](documantation_images/gridtracker2_settings.png)
 
+# Apache Guacamole Configuration Edits
+  ## Change Username Or Password
+  ## Change Connection IP
 
 # Linux and Sound Cards
 Often the most tricky part of linux.  
