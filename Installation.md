@@ -40,11 +40,31 @@ This install script walks you through a few dietpi setup screens, installs requi
 Run the following command to download the setup script, make it executable, and run it.  The script will take care of the rest of the basic setup.  
   ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/devrdp/install.sh && chmod +x install.sh && ./install.sh```
 
-### Graphics Setup
+> [!IMPORTANT]
+> DietPi menus are sometimes odd.  To exit a menu once set sometimes you have to choose "Exit" other times it is labeled "Back". And lastly sometimes when you make a selection it will continue automatically.
 
-Once you select Intel or AMD for your graphics driver to install DietPi will ask you if
+## Important Setup Questions
 
-IMAGE_OF_GRAPHICS_NO_X11
+The following questions have specific reasons and the answers may be the opposite of what is expected. So please select the following answers when asked.  Other questions are up to you - ie what browser to install.
+
+### X11 Configuration
+
+Once you select Intel or AMD for your graphics driver to install DietPi will ask you...
+
+- "Would like to auto-configure X11 now?"  
+  - Answer ```Cancel```
+    - If you select OK it will get into a menu loop that I can't get out of.
+
+![dietpi x11 config menu question screenshot](documantation_images/x11-autoconfig.png)
+
+### Startup Options
+
+- Would you like to configure the DiePi-Autostart Option?
+  - Answer ```Cancel```
+  - We are happy with the default which is boot to LXQt but do not automatically login
+  - This is a security measure
+
+![dietpi autostart config menu question screenshot](documantation_images/dietpi-startup-setup.png)
 
 ## Open Dockge
   
