@@ -73,5 +73,20 @@ To keep things simple the page only sends websocket commands and does not do any
 
 These both are straight html+css with either text, links, or images.  Nothing fancy going on here.
 
+## Desktop Environment
+
+Due to issues with graphics drivers and GridTracker2 in a XPRA based docker container I decided to just let the desktop be local.  This does raise resource requirements and isn't the most ideal but it also allos graphics and audio drivers to be natively accessed.
+
+* LXQt is installed via DietPi menu.
+  * Only test on Intel integrated GPU at this time.
+* WSJT-X, GridTracker2, and JS8Call are all 'installed' using AppImages.
+  * Stored in /mnt/dietpi_userdata/AppImages
+  * Renamed from their long names (ie GridTracker2-2.260723.0-x86_64.AppImage) to simpler app name only (ie gridtracker2.AppImage)
+  * Custom menu items in repo are placed in ~/.local/share/applications
+   * Shorted name allows menu items to be easily 'reused' by users
+   * Application "upgrades" are only a matter of renaming the new AppImage to the shortened name and placed in the correct folder
+   * New custom applications and shortcuts can be added by making a new custom menu item and shorted AppImage name
+   
+
 
    
