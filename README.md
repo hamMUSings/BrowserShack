@@ -134,7 +134,7 @@ As this is a full LXQt desktop other ham radio or non ham radio apps can be inst
 > [!IMPORTANT]
 > For the specific BrowserShack setup see the [Post Installation Configuration](configuration.md) page.
 
-![BrowserShack digipanel example.](documantation_images/digipanel-xpra.png)
+![DigiPanel LXQt Dekstop with Apps open](documantation_images/lxqt_apps_open.png)
 
 <ins>Wavelog</ins>
 
@@ -269,8 +269,6 @@ Here you will enter root as the user and the password you set for root when you 
 Then you will be greated with the LXQt desktop -- ready to radio! Just hit the Other catetory in the start menu and you are off to the races to setup and use the digital radio apps.
 
 ![LXQt Dekstop with Menu](documantation_images/lxqt_with_menu.png)
-
-![LXQt Dekstop with Apps open](documantation_images/lxqt_apps_open.png)
 
 ## While Radio-ing
 
