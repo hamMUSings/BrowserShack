@@ -27,7 +27,9 @@ if [ $uninstall == "false" ]; then
 	echo "On the next two DietPi menu screens set your hostname, enable your audio (you do not need to select an audio device), and select your graphic driver"
 	read -p "Press enter to continue"
 	echo ""
-
+	#-------- Install LXQt that are available via DietPi --------
+	/boot/dietpi/dietpi-software install 173 # LXQt 
+	
 	# -------- Set Hostname and Enable Audio via DietPi Menus --------
 	/boot/dietpi/dietpi-config 5
 	/boot/dietpi/dietpi-config 14
@@ -52,7 +54,6 @@ if [ $uninstall == "false" ]; then
 	/boot/dietpi/dietpi-software install 134 # Docker Compose
 	/boot/dietpi/dietpi-software install 17  # Git
 	/boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
-	/boot/dietpi/dietpi-software install 173 # LXQt 
 	/boot/dietpi/dietpi-software install 29 # XRDP
 
 
