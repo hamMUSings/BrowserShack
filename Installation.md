@@ -16,6 +16,16 @@
   - DietPi will ask if you want to install an pure minimal system.  Answer ok.
     - ![dietpi software menu warning](documantation_images/dietpi_software2.png)
 
+## Highly Recommended Before Installing BrowserShack
+
+As some of the BrowserShack setup uses the current IP address to configure connections and menu items the following are highly recommended:
+
+- Connect to Network Interface you plan to permanently run the server on
+  - ie - if you are going to use it on wifi make sure DietPi is connected via wifi and not ethernet
+
+- Static or DHCP Reserved IP address
+  - If it will be turned on intermittently a static or DHCP reserved IP is highly recommended to the connections always work
+
 ## Base BroswerShack Install
 
 This install script walks you through a few dietpi setup screens, installs required base apps via DietPi software menu, installs Dockge docker compose manager, and copies neccessary files for BrowserShack to their correct locations so DietPi backup can be used and the docker containers are premapped to the locations.
