@@ -124,9 +124,12 @@ Start the stacks marked Active below and stop the stacks that are marked Inactiv
   - browsershack_web_frontend
   - control_stack  
   - wavelog
-  - digipanel-xpra
+  - guacamole
 - Inactive
   - voice_stack
+- Desktop Applications Open
+  - WJST-X or JS8Call
+  - GridTracker2 optinal
 
 ### Voice Radio Stack Statuses
 
@@ -135,8 +138,13 @@ Start the stacks marked Active below and stop the stacks that are marked Inactiv
   - control_stack  
   - wavelog
   - voice_stack
+  - guacamole
 - Inactive
-  - digipanel-xpra
+  - none
+- Dekstop Applications CLOSED
+  - WSJT-X
+  - JS8Call
+
   
 If the stacks don't start successfully check the settings edited above. Particularly, serial port mappings.
 
@@ -163,7 +171,7 @@ Most of the setup for WSJT-x and GridTracker2 are not special to BrowserShack.  
 * [WSJT-X](https://wsjt.sourceforge.io/wsjtx.html)
 * [GridTracker2](https://gridtracker.org/)
 
-Most of the specific settings are using the container names to connect the services
+Most of the specific settings are using the correct names to connect the services
 
 ## WSJT-X
 
