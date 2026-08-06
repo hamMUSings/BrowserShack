@@ -85,9 +85,9 @@ Due to issues with graphics drivers and GridTracker2 in a XPRA based docker cont
   * Stored in /mnt/dietpi_userdata/AppImages
   * Renamed from their long names (ie GridTracker2-2.260723.0-x86_64.AppImage) to simpler app name only (ie gridtracker2.AppImage)
   * Custom menu items in repo are placed in ~/.local/share/applications
-   * Shorted name allows menu items to be easily 'reused' by users
+   * Shortened name allows menu items to be easily 'reused' by users
    * Application "upgrades" are only a matter of renaming the new AppImage to the shortened name and placed in the correct folder
-   * New custom applications and shortcuts can be added by making a new custom menu item and shorted AppImage name
+   * New custom applications and shortcuts can be added by making a new custom menu item and shortened AppImage name
 
 ### Apache Guacamole 
 
