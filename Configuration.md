@@ -183,7 +183,7 @@ For the radio setting on WSTJ-X set:
 * Rig: Hamliib NET rigctl (Maroon Box)
 * Network Server: localhost:45320 (Green Box)
   * This is static container name within BrowserShack so the network traffic doesn't leave the Server
-  * Port is the internal port number of the hamlib-server container NOT the external port of 45320
+  * Port is the external port number of the hamlib-server container (45230) NOT the standard 4532 
 * PTT Method: CAT (Purple Box)
 * Transmit Audio Source, Mode, and Split Operation: Dependent Upon your radio (Yellow Box)
 
