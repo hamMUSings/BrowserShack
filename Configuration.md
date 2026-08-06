@@ -15,11 +15,14 @@
     - [Radio Tab](#radio-tab)
 	- [Audio Tab](#audio-tab)
   - [GridTracker2](#gridtracker2)
-- [Apache Guacamole Configuration Edits](#apache-guacamole-configuration-edits)
-  - [Username & Password Changes](#change-username-or-password)
-  - [Connection IP Changes](#change-connection-ip)
-- [Application Upgrades](#upgrading-applications)
+
 - [Linux and Sound Cards](#linux-and-sound-cards)
+- [Optional Configurations](#optional-configurations)
+  - [Apache Guacamole Configuration Edits](#apache-guacamole-configuration-edits)
+    - [Username & Password Changes](#change-username-or-password)
+    - [Connection IP Changes](#change-connection-ip)
+  - [Application Upgrades](#upgrading-applications)
+
 
 # Edit and Start Docker Stacks
 
