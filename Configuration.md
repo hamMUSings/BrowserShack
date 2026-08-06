@@ -210,8 +210,6 @@ Or opening via the file manager (Violet Box) and right click -> Open with -> Fea
 
 ![Apache Guacamole config file location](documantation_images/apache_fm_configfile.png)
 
-![Guacamole Config File Contents](documantation_images/apache_fm_configfile_edit.png)
-
 ## Change Username Or Password
 
 Edit the plaintext username and password field in the user-mapping.xml file (Grey Box)
@@ -219,6 +217,8 @@ Edit the plaintext username and password field in the user-mapping.xml file (Gre
 ## Change Connection IP
 
 Edit the hostmane field in the user-mapping.xml file (Light Brown Box)
+
+![Guacamole Config File Contents](documantation_images/apache_fm_configfile_edit.png)
 
 # Upgrading Applications
 
