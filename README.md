@@ -1,6 +1,6 @@
 # BrowserShack Summary
 
-This is a a collection of containerized tools to make a browser based FT-8/Digital focused remote setup with a very lightweight web based launcher to tie them all together.
+This is a a collection of containerized/virtualized tools to make a browser based FT-8/Digital focused remote setup with a very lightweight web based launcher to tie them all together.
 
 It goes one step further and focuses on radios that have video output and keyboard/mouse input to control the radio via an simple IP KVM.  Such as a Yaesu FT-710. This eliminates complex web interface for controlling the radio and keeps it simple: use the radio like you were in front of it. Natively.
 
@@ -9,9 +9,6 @@ It goes one step further and focuses on radios that have video output and keyboa
 
 > [!NOTE]
 > Designed and best used for radios with video out and mouse input in -- eg Yaesu FT-710
-
-> [!IMPORTANT]
-> BrowserShack is a <ins>**headless server solution**</ins> that is meant to be accessed from other devices web browsers. There is NO desktop environment in BrowserShack to reduce hardware requirements.
 
 ![BrowserShack main screen.](documantation_images/main_screen.png)
 
@@ -22,7 +19,7 @@ This package includes:
 * Dockge Web-Based Docker Manager -- to edit customs settings and monitor each tools docker container
 * Open IP KVM - Lightweight and no security updated ip kvm that now uses ustreamer and CH9329 UART module for mouse/keyboard control ([Option]( https://www.aliexpress.us/item/3256807460786666.html?spm=a2g0o.order_list.order_list_main.5.7fb91802YVei7O&gatewayAdapt=glo2usa))
 * Wavelog - Fully featured web-based logging application
-* Custom DigiPanel running WSJT-X, GridTracker2, and JS8Call via an xpra session accessible via a web page
+* Custom-ish DigiPanel LXQt desktop environment running WSJT-X, GridTracker2, and JS8Call as portable AppImages and Apache Guacamole accessible via a web page
 * Custom WebRTC Handmic application: Mic to the radio with PTT and bare-bones controls: Mode (USB,LSB, FM) and Frequency change
   * Includes custom websocketd server to interface handmic webpage with rigctl/rigctld
   * Audio output from the radio is included on the home page: Two Way Audio!
@@ -54,11 +51,18 @@ One of the biggest reasons for me to consolidate these features is to keep all t
   * I love my Raspberry Pi/ARM machines and I ran out of horse power while running GridTracker when I got a better radio
   * More processing power for decode
   * Cost of a low power but more powerful than ARM mini-computers is very close to the cost of a Raspberry Pi 
-  * Technically all the docker containers can be rebuilt for ARM with docker build I just haven't
+  * Technically all the docker containers can be rebuilt ARM with docker build I just haven't
+  * App Images can be replaced with ARM version for main apps as well 
 * Docker
-  * Build all parts in docker containers
+  * Build most parts in docker containers
   * This is a more modern approach to virtualization at the moment
   * Allows users to pick and choice which 'application' or role is important to them and easily reduce resources used with a simple start/stop of docker container
+* Bare Minimum Desktop
+  *  Running stock LXQt via DietPi
+  *  Core ham radio apps are AppImages
+    * Easy to upgrade (See Application Upgrade Instructions)
+  * Had trouble with GridTracker2 and GPU acceleartion in docker container so moved to local bare desktop environment     
+    * Still web/browser/remote accessibe via XRDP and Apache Guacamole with prebuild credentials
 * IP-KVM Focused
   * By focusing on radios that made video out and mouse input in the web front end can be greatly simplified
   * Users can use the same UI to their radio on the computer so learning curve is less
@@ -66,7 +70,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
 * Open Source and Free
 * Build on Diet-Pi
   * Allows many hardware options to easily be supported
-  * Allows easy core applications install with pre-configured optimization
+  * Allows easy dependency applications install with pre-configured optimization
   * Can be 'ported' to ARM easily and the install script will still work
   * Allows use of built in utilities:
     * Alsa config
@@ -83,7 +87,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
   * Majority of controls via IP-KVM
   * WebRTC allows browser based audio in and out so no separate applications are needed
 * LAN focus
-  * Low security was acceptable for ease of building. As such not intended to be exposed to the internet directly
+  * Lower security was acceptable for ease of building. As such not intended to be exposed to the internet directly
   * Remote radio work from anywhere in the house not anywhere in the world
   * Allows radio to be mounted in a less viewed area and still easily used
 
@@ -108,11 +112,15 @@ The main page is intentionally very simple. There are 4 main areas of note:
 
 This is the main set of links for BrowserShack. Each 'sub panel' opens up in a new tab for ease of multiple windows at one time.
 
-<ins>DigiPanel - XPRA</ins>
+<ins>DigiPanel - RDP</ins>
 
-This is the main interface for digital radio.  It opens a webpage with WSJT-X and GridTracker2 automatically opened.  JS8Call is also installed but doesn't auto run.
+This is the main interface for digital radio.  It opens an Apache Guacamole login page with once logged in turn opens up an RDP session to the BrowserShack's LXQt desktop.  Here users can run WSJT-X, GridTracker2, and JS8Call via the "Other" category in the start menu.  
 
-For more information on the use and features of this panel visit the [github repository for the docker container.](https://github.com/hamMUSings/digipanel-xpra)
+As the desktop runs on the bare metal sound and graphic devices wowrk muuch more smoothly.  
+
+Applications are easy to upgrade by simply downloading new AppImages, naming them correctly, and placing them in the correct folder.  No dependency issues, incomatibilities, or conflicts to worry about.
+
+As this is a full LXQt desktop other ham radio or non ham radio apps can be installed to the users liking easily.
 
 > [!IMPORTANT]
 > For the specific BrowserShack setup see the [Post Installation Configuration](configuration.md) page.
@@ -184,9 +192,10 @@ To hide the audio player again click the same speaker icon.
 Dockge is a core part of the system. It allows easy monitoring of all the containers in BrowserShack.  It is also how you start and stop applicable subsystems notably:
 
 1) Hamlib RIGCTLD Server & IP KVM Server - control_stack stack
-2) Toggle Digipanel and Phone subsystems
+2) Toggle Phone subsystem
+3) Confirm Apache Guacamole subsystem is up and running
 
-Turning off the control_stack (hamlib server and ip-kvm) is the primary security method of this setup. 
+Turning off the control_stack (hamlib server and ip-kvm) is a primary security method of this setup. 
 
 > [!WARNING]
 > It is highly recommended to turn off the 'control_stack' stack when not in active use. This reduces the change of anyone accidentally or maliciously keying the radio without your knowledge.
@@ -218,12 +227,11 @@ Once everything is configured and all containers are confirmed to start and run 
 2) Launch Dockge page
 3) Start the control_stack stack
    - Make sure the radio is already on if yours does not auto-start with hamlib connection
-4) Start either the 
-   - digipanel-xpra stack
+4) Start or stop the 
    - voice_stack 
    - depending on how you want to radio today
 5) Launch either the 
-   - DigiPanel - XPRA web page
+   - DigiPanel - RDP web page
    - Hamdmic page 
    - Again depending on how you want to radio today
 
