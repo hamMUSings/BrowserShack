@@ -248,9 +248,9 @@ Once everything is configured and all containers are confirmed to start and run 
 
 When the Digipanl - RDP is launched it will take you to an Apache Guacamole login page.   This is the first of two sets of crenditals you will need to login to your LXQt desktop.
 
-GUACAMOLE LOGIN SCREEN SHOT
+![Guacamole login screen](documantation_images/apache_guacamole_login.png)
 
-The defaukt username and password are as follows but are changable in a configuration file.  
+The default username and password are as follows but are changable in a configuration file.  
 
 Username: shack
 Password: browser
@@ -260,13 +260,17 @@ Password: browser
 
 Once you have logged in Guacamole will initalized an RDP session to your BrowserShack computer automatically. It will then bring up the XRDP login screen.
 
+![Guacamole connecting screenshot](documantation_images/guac_connecting.png)
+
 Here you will enter root as the user and the password you set for root when you installed DietPi.
 
-XRDP LOGIN SCREEN SHOT
+![XRDP login screen](documantation_images/xrdp_login.png)
 
 Then you will be greated with the LXQt desktop -- ready to radio! Just hit the Other catetory in the start menu and you are off to the races to setup and use the digital radio apps.
 
-DESKTOP WITH OTHER MENU OPEN SCREEN SHOT
+![LXQt Dekstop with Menu](documantation_images/lxqt_with_menu.png)
+
+![LXQt Dekstop with Apps open](documantation_images/lxqt_apps_open.png)
 
 ## While Radio-ing
 
