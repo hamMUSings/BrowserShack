@@ -63,6 +63,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
     * Easy to upgrade (See Application Upgrade Instructions)
   * Had trouble with GridTracker2 and GPU acceleartion in docker container so moved to local bare desktop environment     
     * Still web/browser/remote accessibe via XRDP and Apache Guacamole with prebuild credentials
+  * Allows to be used directly with a monitor if desired
 * IP-KVM Focused
   * By focusing on radios that made video out and mouse input in the web front end can be greatly simplified
   * Users can use the same UI to their radio on the computer so learning curve is less
