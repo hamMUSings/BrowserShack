@@ -252,9 +252,8 @@ When the Digipanl - RDP is launched it will take you to an Apache Guacamole logi
 
 The default username and password are as follows but are changable in a configuration file.  
 
-Username: shack
-
-Password: browser
+* Username: shack
+* Password: browser
 
 > [!NOTE]
 > As there is still your root password after this first login the security concerns of using a common username password are lessened.
