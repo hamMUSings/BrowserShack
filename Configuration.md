@@ -181,7 +181,7 @@ Most of the specific settings are using the correct names to connect the service
 ### Radio Tab
 For the radio setting on WSTJ-X set:
 * Rig: Hamliib NET rigctl (Maroon Box)
-* Network Server: hamlib-server:4532 (Green Box)
+* Network Server: localhost:45320 (Green Box)
   * This is static container name within BrowserShack so the network traffic doesn't leave the Server
   * Port is the internal port number of the hamlib-server container NOT the external port of 45320
 * PTT Method: CAT (Purple Box)
