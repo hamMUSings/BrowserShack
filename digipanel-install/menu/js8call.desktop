@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=JS8Call
-Exec=~/AppImages/JS8Call.AppImage
+Exec=/mnt/dietpi_userdata/AppImages/JS8Call.AppImage
 Icon=utilities-terminal;
