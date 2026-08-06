@@ -104,6 +104,9 @@ if [ $uninstall == "false" ]; then
 	chmod +x /mnt/dietpi_userdata/AppImages/*
 	cp -r ./digipanel-install/menu/* ~/.local/share/applications
 
+	# -------- Copys in radio appropriate background --------
+	cp -f ./digipanel-install/background/artychoc-frequency-9864075_1920.png /var/lib/dietpi/dietpi-software/installed/desktop/wallpapers/dietpi-logo_inverted_1080p.png
+
 	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
