@@ -216,7 +216,9 @@ Edit the plaintext username and password field in the user-mapping.xml file (Gre
 
 ## Change Connection IP
 
-Edit the hostmane field in the user-mapping.xml file (Light Brown Box)
+If your BrowserShack computer changes IP addresses you will need to update that in the RDP Connection settings in Apache Guacamole.
+
+Edit the hostmane field in the user-mapping.xml file (Light Brown Box) to the new IP address of your BrowserShack computer.
 
 ![Guacamole Config File Contents](documantation_images/apache_fm_configfile_edit.png)
 
