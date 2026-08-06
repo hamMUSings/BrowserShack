@@ -73,11 +73,11 @@ To keep things simple the page only sends websocket commands and does not do any
 
 These both are straight html+css with either text, links, or images.  Nothing fancy going on here.
 
-## Desktop Environment
+# Desktop Environment
 
 Due to issues with graphics drivers and GridTracker2 in a XPRA based docker container I decided to just let the desktop be local.  This does raise resource requirements and isn't the most ideal but it also allos graphics and audio drivers to be natively accessed.
 
-### LXQt
+## LXQt
 
 * LXQt is installed via DietPi menu.
   * Only tested on Intel integrated GPU at this time.
@@ -89,13 +89,13 @@ Due to issues with graphics drivers and GridTracker2 in a XPRA based docker cont
    * Application "upgrades" are only a matter of renaming the new AppImage to the shortened name and placed in the correct folder
    * New custom applications and shortcuts can be added by making a new custom menu item and shortened AppImage name
 
-### Apache Guacamole 
+## Apache Guacamole 
 
 Access to LXQt desktop is via dockerized Apache Guacamole server and client
 * Configuration for single user and pre-installed connection is controled via configuration file passed to the docker container
    * /mnt/dietpi_userdata/dockge/stacks/guacamole/guac_home/user-mapping.xml 
 
-### Background Image
+## Background Image
 
 Custom background image is set to load by overwriting DietPi's custom image located at:
 
