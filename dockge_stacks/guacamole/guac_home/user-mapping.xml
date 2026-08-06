@@ -1,0 +1,11 @@
+<user-mapping>
+
+    <!-- Per-user authentication and config information -->
+    <authorize username="shack" password="browser">
+        <protocol>rdp</protocol>
+            <param name="hostname">IIPPPPLLAACCEEHHOOLLDDEEERR</param>
+            <param name="port">3389</param>
+            <param name="ignore-cert">true</param>
+    </authorize>
+
+</user-mapping>

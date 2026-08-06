@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=GridTracker2
+Exec=~/AppImages/GridTracker2.AppImage
+Icon=utilities-terminal;

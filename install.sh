@@ -86,14 +86,23 @@ if [ $uninstall == "false" ]; then
 	#cp -r ./dockge_stacks/* /opt/stacks
 	cp -r ./dockge_stacks/* /mnt/dietpi_userdata/dockge/stacks
 
-	# -------- Copy website lauincher files & set hostname --------
+	# -------- Copy website launcher files & set hostname --------
 	cp -r ./web_launcher/* /mnt/dietpi_userdata/busyboxhttpd
+
+	# -------- Copy/Rename AppImages & Menu items --------
+	mkdir /mnt/dietpi_userdata/AppImages
+	cp ./digipanel-install/AppImages/GridTracker2-2.260723.0-x86_64.AppImage /mnt/dietpi_userdata/AppImages/GridTracker2.AppImage
+	cp ./digipanel-install/AppImages/wsjtx-3.0.2-linux-x86_64.AppImage /mnt/dietpi_userdata/AppImages/wsjtx.AppImage 
+	cp ./digipanel-install/AppImages/JS8Call-v3.0.3-x86_64.AppImage /mnt/dietpi_userdata/AppImages/JS8Call.AppImage
+	chmod +x /mnt/dietpi_userdata/AppImages/*
+	cp -r .digipanel-install/menu/* ~/.local/share/applications
 
 	# -------- set hostname --------
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/index.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/IIPPPPLLAACCEEHHOOLLDDEEERR/$HOST_IP/g" /mnt/dietpi_userdata/busyboxhttpd/handmic.html
 	sed -i "s/HHOOSSTTPPLLAACCEEHHOOLLDDEEERR/$HOST_VAR/g" /mnt/dietpi_userdata/busyboxhttpd/audioplayer.html
+	sed -i "s/IIPPPPLLAACCEEHHOOLLDDEEERR/$HOST_IP/g" /mnt/dietpi_userdata/dockge/stacks/guacamole/guac_home/user-mapping.xml
 
 	# -------- Copy Server.xml config files for ome  --------
 	cp -r ./ome-config/* /mnt/dietpi_userdata/docker-data/volumes/voice_stack_ome-origin-conf/_data
@@ -121,7 +130,8 @@ if [ $uninstall == "false" ]; then
 	cd /mnt/dietpi_userdata/dockge/stacks/browsershack_web_frontend
 	docker compose up -d
 	
-	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
+	#cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
+	cd /mnt/dietpi_userdata/dockge/stacks/guacamole
 	docker compose up -d
 
 	echo "BrowserShack is installed.  Navigate to http://$HOST_VAR:5001 to continue setup..."
@@ -136,7 +146,7 @@ elif [ $uninstall == "true" ]; then
 	cd /mnt/dietpi_userdata/dockge/stacks/browsershack_web_frontend
 	docker compose down --rmi all -v --remove-orphans
 	
-	cd /mnt/dietpi_userdata/dockge/stacks/digipanel-xpra
+	cd /mnt/dietpi_userdata/dockge/stacks/guacamole
 	docker compose down --rmi all -v --remove-orphans
 
 	cd /mnt/dietpi_userdata/dockge/stacks/control_stack
@@ -157,11 +167,17 @@ elif [ $uninstall == "true" ]; then
 	rm -r /mnt/dietpi_userdata/dockge
 	rm -r /mnt/dietpi_userdata/browsershack-setup
 	rm -r /mnt/dietpi_userdata/wavelog-db
+	rm -r /mnt/dietpi_userdata/AppImages
+	rm ~/.local/share/applications/wsjtx.desktop
+	rm ~/.local/share/applications/js8call.desktop
+	rm ~/.local/share/applications/gridtracker2.desktop
 	
 	# Uninstall dietpi-software installed
 	read -p "Uninstall git? (y/N)" REM_GIT
 	read -p "Uninstall avahi (y/N)? " REM_AVAHI
 	read -p "Uninstall docker and docker compose? (y/N)" REM_DOCKER
+	read -p "Uninstall xrdp? (y/N)" REM_XRDP
+	read -p "Uninstall LXQt? (y/N)" REM_LXQT
 	
 	# Check GIT Answer
 	if [ $REM_GIT == "y" ]; then
@@ -174,7 +190,7 @@ elif [ $uninstall == "true" ]; then
 	if [ $REM_AVAHI == "y" ]; then
 		/boot/dietpi/dietpi-software uninstall 152 # Avahi-Daemon
 	else
-		echo "Git: NOT REMOVED. Please remove via dietpi-software menu"
+		echo "Avahi: NOT REMOVED. Please remove via dietpi-software menu"
 	fi
 	
 	# Check Docker and Docker Compose Answer
@@ -182,7 +198,21 @@ elif [ $uninstall == "true" ]; then
 		/boot/dietpi/dietpi-software uninstall 162 # Docker
 		/boot/dietpi/dietpi-software uninstall 134 # Docker Compose
 	else
-		echo "Git: NOT REMOVED. Please remove via dietpi-software menu"
+		echo "Docker and Docker Compose: NOT REMOVED. Please remove via dietpi-software menu"
+	fi
+
+	# Check xrdp Answer
+	if [ $REM_XRDP == "y" ]; then
+		/boot/dietpi/dietpi-software uninstall 29  # xrdp
+	else
+		echo "XRDP: NOT REMOVED. Please remove via dietpi-software menu"
+	fi
+
+	# Check LXQt Answer
+	if [ $REM_LXQt == "y" ]; then
+		/boot/dietpi/dietpi-software uninstall 173  # LXQt
+	else
+		echo "LXQt: NOT REMOVED. Please remove via dietpi-software menu"
 	fi
 
     # Uninstall goes here
