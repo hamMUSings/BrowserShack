@@ -27,13 +27,13 @@ if [ $uninstall == "false" ]; then
 	echo "On the next two DietPi menu screens set your hostname, enable your audio (you do not need to select an audio device), and select your graphic driver"
 	read -p "Press enter to continue"
 	echo ""
-	#-------- Install LXQt that are available via DietPi --------
-	/boot/dietpi/dietpi-software install 173 # LXQt 
+	
+
 	
 	# -------- Set Hostname and Enable Audio via DietPi Menus --------
-	/boot/dietpi/dietpi-config 5
-	/boot/dietpi/dietpi-config 14
-	/boot/dietpi/dietpi-config 102
+	/boot/dietpi/dietpi-config 5 # Hostname
+	/boot/dietpi/dietpi-config 14 # ALSA
+	/boot/dietpi/dietpi-config 102 # Video Driver
 
 	echo ""
 	echo ""
@@ -55,7 +55,11 @@ if [ $uninstall == "false" ]; then
 	/boot/dietpi/dietpi-software install 17  # Git
 	/boot/dietpi/dietpi-software install 152 # Avahi-Daemon --- to register the hostname with DNS
 	/boot/dietpi/dietpi-software install 29 # XRDP
+	# -------- Install LXQt that are available via DietPi --------
+	/boot/dietpi/dietpi-software install 173 # LXQt 
 
+	# -------- Install GridTracker2 dependency --------
+	apt install -y libnss3
 
 	# -------- Create docker backbone network --------
 	docker network create --driver bridge --subnet 10.10.0.0/16 --ip-range 10.10.5.0/24 --gateway 10.10.5.254 browsershack-backend
@@ -93,6 +97,7 @@ if [ $uninstall == "false" ]; then
 
 	# -------- Copy/Rename AppImages & Menu items --------
 	mkdir /mnt/dietpi_userdata/AppImages
+	mkdir ~/.local/share/applications
 	wget https://download2.gridtracker.org/GridTracker2-2.260723.0-x86_64.AppImage -O /mnt/dietpi_userdata/AppImages/GridTracker2.AppImage
 	cp ./digipanel-install/AppImages/wsjtx-3.0.2-linux-x86_64.AppImage /mnt/dietpi_userdata/AppImages/wsjtx.AppImage 
 	cp ./digipanel-install/AppImages/JS8Call-v3.0.3-x86_64.AppImage /mnt/dietpi_userdata/AppImages/JS8Call.AppImage
