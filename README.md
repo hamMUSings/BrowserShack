@@ -46,7 +46,7 @@ One of the biggest reasons for me to consolidate these features is to keep all t
 ## Design Goals
 * Digital First 
   * Many other remote radio products focus on phone/voice as the primary mode and digital as an add on
-* Web-Based Entirely
+* Web-Accessible Entirely
 * X86-64 Native 
   * I love my Raspberry Pi/ARM machines and I ran out of horse power while running GridTracker when I got a better radio
   * More processing power for decode
