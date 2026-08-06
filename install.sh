@@ -97,7 +97,7 @@ if [ $uninstall == "false" ]; then
 
 	# -------- Copy/Rename AppImages & Menu items --------
 	mkdir /mnt/dietpi_userdata/AppImages
-	mkdir ~/.local/share/applications
+	mkdir -p ~/.local/share/applications
 	wget https://download2.gridtracker.org/GridTracker2-2.260723.0-x86_64.AppImage -O /mnt/dietpi_userdata/AppImages/GridTracker2.AppImage
 	cp ./digipanel-install/AppImages/wsjtx-3.0.2-linux-x86_64.AppImage /mnt/dietpi_userdata/AppImages/wsjtx.AppImage 
 	cp ./digipanel-install/AppImages/JS8Call-v3.0.3-x86_64.AppImage /mnt/dietpi_userdata/AppImages/JS8Call.AppImage
