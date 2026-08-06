@@ -24,9 +24,17 @@ This install script walks you through a few dietpi setup screens, installs requi
   - hostname is dynamically replaced in web page link files
 - docker-compose.yaml files for each container to Dockge locations
 - OvenMediaEngine Server.xml configuration file
+- Desktop Appimages & custom menu items
+- RDP credential and connection file
 
 Run the following command to download the setup script, make it executable, and run it.  The script will take care of the rest of the basic setup.  
   ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/devrdp/install.sh && chmod +x install.sh && ./install.sh```
+
+### Graphics Setup
+
+Once you select Intel or AMD for your graphics driver to install DietPi will ask you if
+
+IMAGE_OF_GRAPHICS_NO_X11
 
 ## Open Dockge
   
