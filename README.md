@@ -92,6 +92,13 @@ One of the biggest reasons for me to consolidate these features is to keep all t
   * Lower security was acceptable for ease of building. As such not intended to be exposed to the internet directly
   * Remote radio work from anywhere in the house not anywhere in the world
   * Allows radio to be mounted in a less viewed area and still easily used
+  * Technically could be remotely access via a service like TailScale or custom VPN
+    * Not recommended for security reasons 
+    * Not liable for any any issues arrising from use in this non-designed way
+  * Security is the responsibility of the end user
+    * Not liable for any damages when using this software
+    * Not liable for any unauthorized transmissions on radio 
+    * Use at your own calculated risk 
 
 # Manual
 
