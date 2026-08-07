@@ -163,6 +163,7 @@ When you launch Wavelog for the first time it will walk you through setting it u
 
 * Database Server: wavelog-db
 * Database Name: wavelog
+* Database Username: wavelog
 * Database Password: Either the generated password at install or the password that was changed in the compose.yaml
 
 All other setup and use are covered on [Wavelog's github wiki](https://github.com/wavelog/wavelog/wiki/Dashboard)
