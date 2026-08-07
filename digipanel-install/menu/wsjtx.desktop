@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=WSJT-X
+Exec=/mnt/dietpi_userdata/AppImages/wsjtx.AppImage
+Icon=utilities-terminal;
