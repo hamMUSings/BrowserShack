@@ -38,7 +38,7 @@ This install script walks you through a few dietpi setup screens, installs requi
 - RDP credential and connection file
 
 Run the following command to download the setup script, make it executable, and run it.  The script will take care of the rest of the basic setup.  
-  ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/devrdp/install.sh && chmod +x install.sh && ./install.sh```
+  ```wget https://raw.githubusercontent.com/hamMUSings/BrowserShack/refs/heads/main/install.sh && chmod +x install.sh && ./install.sh```
 
 > [!IMPORTANT]
 > DietPi menus are sometimes odd.  To exit a menu once set sometimes you have to choose "Exit" other times it is labeled "Back". And lastly sometimes when you make a selection it will continue automatically.
