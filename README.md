@@ -1,3 +1,13 @@
+# ABANDONED BRANCH - August 2026
+
+This was the original dev branch of BrowserShack.  It was abandoned when it was discovered that running GridTracker2 in an docker container with XPRA was failing due to graphics card acceleration issues. Even after seemingly resolving passing the graphics render capabilities into the docker container GridTracker2 would go black within 30 seconds of opening. After the discovery of Apache Guacamole (web RDP client) which somehow I missed in my earlier searches for web based RDP client, this branch was abandoned. 
+
+It shifted the project to not being purely docker based but the benefits of running a desktop on bare metal so GridTracker2 would open and run were the trade off.  It also does allow users to plug an HDMI directly into the computer and use the features that way and not solely as a headless server.  And by using portable AppImages I was able to keep the base install pretty vanilla and in theory could also run on Wayland while XPRA was really on X11.  Currently, DietPi LXQt is X11 but it somewhat future proofs the project and gives users more ability to upgrade or add applications at the expensive of more resources and not a full docker container stack.  
+
+At the time this was an acceptable trade off.
+
+This branch has been renamed and left for archive purposes and in case anyone wants to resolve the XPRA / Docker / GridTracker2 issue the work is still available.
+
 # BrowserShack Summary
 
 This is a a collection of containerized tools to make a browser based FT-8/Digital focused remote setup with a very lightweight web based launcher to tie them all together.
